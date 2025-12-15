@@ -1,0 +1,24 @@
+# 이미지 파일 (저작권 문제로 제외)
+달러보험/
+*.png
+*.jpg
+*.jpeg
+
+# 배포 불필요한 파일들
+달러-업업업.html
+달러-제안.html
+달러-복사본.html
+달러전략.md
+달러전략 - 인플레이션.html
+달러전략 - 인플레이션.txt
+*.pdf
+*.pptx
+*.txt
+*.lnk
+*.md
+!README.md
+
+# 기타
+.DS_Store
+Thumbs.db
+
