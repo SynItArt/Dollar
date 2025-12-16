@@ -20,35 +20,11 @@
             font-size: 18px;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            /* 복제 방지 */
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-touch-callout: none;
-        }
-        
-        /* 텍스트 선택 허용 (접근성) */
-        .content, .section-content, p, span, div, h1, h2, h3, h4, h5, h6 {
-            -webkit-user-select: text;
-            -moz-user-select: text;
-            -ms-user-select: text;
-            user-select: text;
-        }
-        
-        /* 이미지 드래그 방지 */
-        img {
-            -webkit-user-drag: none;
-            -khtml-user-drag: none;
-            -moz-user-drag: none;
-            -o-user-drag: none;
-            user-drag: none;
-            pointer-events: none;
         }
         
         .container {
-            min-width: 750px;
-            max-width: 750px;
+            width: calc(100% - 20px);
+            max-width: 900px;
             margin: 0 auto;
             background-color: #2d2d2d;
             box-shadow: 0 0 30px rgba(0,0,0,0.5);
@@ -131,17 +107,16 @@
         }
         
         .warning-box {
-            background: #8B0000;
-            border-left: 5px solid #ff4444;
+            background: linear-gradient(135deg, #4a1a1a 0%, #6b2a2a 100%);
+            border-left: 5px solid #dc3545;
             padding: 35px 40px;
-            border-radius: 15px;
+            border-radius: 10px;
             margin: 40px 0;
             font-size: 1.25em;
             line-height: 2.3;
-            color: #ffffff;
+            color: #ffe6e6;
             font-weight: 500;
             text-align: justify;
-            box-shadow: 0 4px 15px rgba(139, 0, 0, 0.3);
         }
         
         .info-box {
@@ -432,6 +407,111 @@
             text-align: center;
         }
         
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 18px 20px;
+            text-align: center;
+            border-bottom: 1px solid #444;
+            color: #e8e8e8;
+            font-size: 1.1em;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #2a2a2a;
+        }
+        
+        .comparison-table .highlight {
+            color: #ffc107;
+            font-weight: 600;
+            font-size: 1.15em;
+        }
+        
+        .comparison-table .better {
+            color: #90ee90;
+            font-weight: 600;
+        }
+        
+        .diagram-box {
+            background: linear-gradient(135deg, #1a3a4a 0%, #2a5a6a 100%);
+            border: 3px solid #17a2b8;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+        
+        .diagram-box h3 {
+            color: #e6f7ff;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .flow-diagram {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .flow-step {
+            background-color: #1a1a1a;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 150px;
+            flex: 1;
+            border: 2px solid #17a2b8;
+        }
+        
+        .flow-step .step-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #17a2b8;
+            margin-bottom: 10px;
+        }
+        
+        .flow-step .step-title {
+            font-size: 1.2em;
+            color: #e6f7ff;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .flow-step .step-desc {
+            font-size: 1em;
+            color: #e8e8e8;
+            line-height: 1.6;
+        }
+        
+        .flow-arrow {
+            font-size: 2em;
+            color: #17a2b8;
+        }
+        
         .footer {
             background-color: #1a1a1a;
             color: #b0b0b0;
@@ -588,167 +668,6 @@
             box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
         }
         
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 30px 0;
-            background-color: #1a1a1a;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        }
-        
-        .comparison-table thead {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .comparison-table th {
-            padding: 20px;
-            text-align: center;
-            color: #ffffff;
-            font-size: 1.2em;
-            font-weight: 700;
-            border: 2px solid #555;
-        }
-        
-        .comparison-table td {
-            padding: 18px 20px;
-            text-align: center;
-            color: #e8e8e8;
-            font-size: 1.1em;
-            border: 2px solid #444;
-        }
-        
-        .comparison-table tbody tr:nth-child(even) {
-            background-color: #2a2a2a;
-        }
-        
-        .comparison-table tbody tr:hover {
-            background-color: #333;
-        }
-        
-        .comparison-table .label-cell {
-            text-align: left;
-            font-weight: 600;
-            color: #ffffff;
-            background-color: #1a1a1a;
-        }
-        
-        .comparison-table .negative {
-            color: #ff6b6b;
-            font-weight: 600;
-        }
-        
-        .comparison-table .positive {
-            color: #51cf66;
-            font-weight: 600;
-        }
-        
-        .comparison-table .highlight {
-            background-color: #2a4a2a;
-            color: #90ee90;
-            font-weight: 700;
-            font-size: 1.15em;
-        }
-        
-        .comparison-table th:first-child,
-        .comparison-table td:first-child {
-            width: 35%;
-            text-align: left;
-            padding-left: 25px;
-            font-weight: 600;
-        }
-        
-        .comparison-table th:not(:first-child),
-        .comparison-table td:not(:first-child) {
-            width: 32.5%;
-        }
-        
-        .comparison-table .calculation-note {
-            font-size: 0.8em;
-            color: #aaa;
-            margin-top: 8px;
-            display: block;
-            font-weight: normal;
-        }
-        
-        .comparison-table td {
-            font-size: 1.05em;
-            padding: 20px;
-        }
-        
-        .table-container {
-            margin: 30px 0;
-            padding: 20px;
-            background-color: #1a1a1a;
-            border-radius: 15px;
-            border: 2px solid #444;
-        }
-        
-        .table-title {
-            color: #ffffff;
-            font-size: 1.4em;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-align: center;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #667eea;
-        }
-        
-        .emotional-section {
-            background: linear-gradient(135deg, #2a1a2a 0%, #4a2a4a 100%);
-            border-left: 5px solid #ff9800;
-            padding: 40px;
-            border-radius: 15px;
-            margin: 50px 0;
-        }
-        
-        .emotional-section h3 {
-            color: #ffcc80;
-            font-size: 2em;
-            margin-bottom: 25px;
-            font-weight: 700;
-            text-align: center;
-        }
-        
-        .emotional-section p {
-            color: #ffffff;
-            font-size: 1.25em;
-            line-height: 2.3;
-            text-align: justify;
-            margin-bottom: 20px;
-        }
-        
-        .cta-flow {
-            background: linear-gradient(135deg, #1a3a1a 0%, #2a5a2a 100%);
-            border: 3px solid #28a745;
-            padding: 50px;
-            border-radius: 20px;
-            margin: 60px 0;
-            text-align: center;
-        }
-        
-        .cta-flow h3 {
-            color: #90ee90;
-            font-size: 2.2em;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-        
-        .cta-flow p {
-            color: #ffffff;
-            font-size: 1.3em;
-            line-height: 2.4;
-            margin-bottom: 25px;
-        }
-        
-        .cta-flow .highlight-text {
-            color: #ffc107;
-            font-size: 1.4em;
-            font-weight: 700;
-            margin: 30px 0;
-        }
-        
         .footer a:hover {
             color: #764ba2 !important;
             transform: scale(1.05);
@@ -759,26 +678,26 @@
             transform: scale(0.98);
         }
         
-        @media (max-width: 768px) {
-            body {
-                overflow-x: auto;
-            }
-            
+        @media (max-width: 900px) {
             .container {
-                min-width: 750px;
-                max-width: 750px;
+                width: calc(100% - 24px);
+                max-width: 100%;
             }
             
             .header {
-                padding: 50px 30px;
+                padding: 48px 24px;
             }
             
             .header h1 {
                 font-size: 2.2em;
             }
             
+            .header .subtitle {
+                font-size: 1.3em;
+            }
+            
             .content {
-                padding: 40px 30px;
+                padding: 32px 24px;
             }
             
             .section-title {
@@ -786,6 +705,8 @@
             }
             
             .section-content {
+                font-size: 1.1em;
+                line-height: 1.9;
                 text-align: left;
             }
             
@@ -801,13 +722,54 @@
                 -webkit-overflow-scrolling: touch;
             }
             
+            .comparison-table {
+                font-size: 0.85em;
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                width: 100%;
+            }
+            
+            .comparison-table thead,
+            .comparison-table tbody,
+            .comparison-table tr {
+                display: table;
+                width: 100%;
+                table-layout: fixed;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 8px;
+                font-size: 0.9em;
+            }
+            
+            .flow-diagram {
+                flex-direction: column;
+            }
+            
+            .flow-arrow {
+                transform: rotate(90deg);
+                margin: 10px 0;
+            }
+            
+            .flow-step {
+                min-width: 100%;
+                margin-bottom: 10px;
+            }
+            
             .modal-content {
                 margin: 20px;
                 padding: 30px 20px;
             }
             
             .time-slots {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+            
+            .consult-btn,
+            .submit-btn {
+                width: 100%;
             }
         }
     </style>
@@ -821,34 +783,21 @@
         </div>
         
         <div class="content">
-            <!-- 인트로 - 경제 상황 공감 -->
-            <div class="intro" style="background: linear-gradient(135deg, #2a1a1a 0%, #4a2a2a 100%); border-left: 5px solid #dc3545;">
-                <p style="font-size: 1.5em; margin-bottom: 25px; line-height: 2.5;">
-                    지금, 우리는 어려운 시기를 살아가고 있습니다.
-                </p>
-                <p style="font-size: 1.3em; line-height: 2.3; margin-bottom: 20px;">
-                    물가는 계속 오르고, 금리는 높아지고, 부동산은 불안정하고, 취업은 어렵고, 자녀 교육비는 걱정되고...<br>
-                    하루하루 버티는 것만으로도 벅찬 지금, 미래를 생각하기가 두렵기도 하고 막막하기도 합니다.
-                </p>
-                <p style="font-size: 1.3em; line-height: 2.3; color: #ffc107; font-weight: 600;">
-                    하지만 우리는 포기할 수 없습니다. 우리가 포기하면, 우리의 미래도, 자녀들의 미래도 없기 때문입니다.
-                </p>
-            </div>
-            
-            <!-- 감성 터치 - 공감대 형성 -->
-            <div class="intro" style="background: linear-gradient(135deg, #1a2a3a 0%, #2a3a4a 100%); border-left: 5px solid #17a2b8; margin-top: 40px;">
-                <p style="font-size: 1.4em; line-height: 2.4; margin-bottom: 20px;">
-                    지금 이 순간, 여러분의 자산 가치가 조용히 줄어들고 있습니다.<br>
-                    인플레이션으로 인해 오늘 1억원이 내일에는 9,800만원의 가치로, 10년 후에는 8,200만원의 가치로 떨어집니다.
-                </p>
-                <p style="font-size: 1.4em; line-height: 2.4; color: #ffffff; font-weight: 600;">
-                    하지만 걱정하지 마세요. 지금부터 준비하면, 미래를 바꿀 수 있습니다.
-                </p>
+            <!-- 인트로 -->
+            <div class="intro">
+                월급은 그대로인데 장보러 갈 때마다 한숨이 늘어나고,<br>
+                집값·전세값·교육비는 여전히 부담스럽습니다.<br><br>
+                💭 이 돈을 그냥 원화로만 들고 있어도 괜찮을까요?<br>
+                💭 10년 뒤, 지금과 같은 생활을 유지할 수 있을까요?
             </div>
             
             <!-- 섹션 0: 누구에게 도움이 되는가 -->
             <div class="section">
                 <h2 class="section-title">달러보험, 누구에게 도움이 될까요?</h2>
+                
+                <div class="section-content">
+                    이런 분들께 특히 도움이 됩니다. 한 번쯤 같이 계산해보면 좋을 것 같습니다.
+                </div>
                 
                 <div class="target-section">
                     <h3>이런 분들께 특히 도움이 됩니다</h3>
@@ -860,12 +809,12 @@
                     
                     <div class="target-item">
                         <h4>🎓 자녀 교육비를 준비하고 계신 분</h4>
-                        <p>자녀의 대학 등록금, 유학비 등을 미리 준비하고 싶으신 분. 교육비는 인플레이션보다 더 빠르게 상승하기 때문에 달러 자산이 필요합니다.</p>
+                        <p>자녀의 대학 등록금, 유학비 등을 미리 준비하고 싶으신 분. 교육비는 인플레이션보다 더 빠르게 상승하는 경우가 많아서 달러 자산을 고려해 볼 수 있습니다.</p>
                     </div>
                     
                     <div class="target-item">
                         <h4>📈 자산을 분산하고 싶으신 분</h4>
-                        <p>모든 자산이 원화로만 되어 있어서 걱정이 되시는 분. 통화 분산을 통해 리스크를 줄이고 싶으신 분.</p>
+                        <p>모든 자산이 원화로만 되어 있어서 걱정이 되시는 분. 통화 분산을 통해 리스크를 줄이는 방법을 고려해 보고 싶으신 분.</p>
                     </div>
                     
                     <div class="target-item">
@@ -875,7 +824,7 @@
                     
                     <div class="target-item">
                         <h4>🛡️ 자산을 보호하고 싶으신 분</h4>
-                        <p>인플레이션으로 인해 자산 가치가 떨어지는 것을 걱정하시는 분. 달러 자산으로 실질 구매력을 보존하고 싶으신 분.</p>
+                        <p>인플레이션으로 인해 자산 가치가 떨어지는 것을 걱정하시는 분. 달러 자산으로 실질 구매력을 보존하는 방법을 고려해 보고 싶으신 분.</p>
                     </div>
                 </div>
             </div>
@@ -884,31 +833,36 @@
             <div class="section">
                 <h2 class="section-title">이런 고민을 하고 계신가요?</h2>
                 
+                <div class="section-content">
+                    많은 분들이 이런 고민을 하고 계십니다. 달러보험이 해결책이 될 수 있습니다.
+                </div>
+                
                 <div class="worry-section">
-                    <h3>달러보험이 해결해드립니다</h3>
+                    <h3>달러보험이 도움이 될 수 있습니다</h3>
                     
                     <div class="worry-item">
                         <h4>😰 "10년 후, 내 자산이 얼마나 남을까 걱정돼요"</h4>
-                        <p>인플레이션으로 인해 지금 1억원이 10년 후에는 실질 구매력이 8,200만원 수준으로 떨어집니다. 원화만 보유하면 자산 가치가 계속 감소합니다.</p>
+                        <p>인플레이션으로 인해 지금 1억원이 10년 후에는 실질 구매력이 8,200만원 수준으로 떨어질 수 있습니다. 원화만 보유하면 자산 가치가 계속 감소할 수 있습니다.</p>
                         <div class="solution">
                             <strong>✓ 달러보험 해결책:</strong> 달러 자산으로 인플레이션에 대응하여 실질 구매력을 보존할 수 있습니다. 미국 금리 5.0%로 더 높은 수익을 얻을 수 있습니다.<br>
-                            <span style="color: #90ee90; font-size: 0.95em;">(미국 금리 5.0% - 인플레이션 2% = 실질 수익률 약 3%)</span>
+                            <span style="color: #90ee90; font-size: 0.95em;">(미국 금리 5.0% - 인플레이션 2% = 실질 수익률 약 3%)</span><br>
+                            엑셀을 켜서 혼자 계산하기보다, 전문가와 나란히 앉아 시뮬레이션을 돌려보는 느낌에 가깝습니다.
                         </div>
                     </div>
                     
                     <div class="worry-item">
                         <h4>💸 "모든 자산이 원화로만 되어 있어 불안해요"</h4>
-                        <p>원화만 보유하면 통화 리스크가 집중됩니다. 원화 가치가 떨어지면 모든 자산이 동시에 가치가 떨어지는 위험이 있습니다.</p>
+                        <p>원화만 보유하면 통화 리스크가 집중될 수 있습니다. 원화 가치가 떨어지면 모든 자산이 동시에 가치가 떨어질 위험이 있을 수 있습니다.</p>
                         <div class="solution">
-                            <strong>✓ 달러보험 해결책:</strong> 달러 자산을 추가하여 통화 분산 효과를 얻을 수 있습니다. 어떤 상황에서도 달러는 강세를 유지합니다.
+                            <strong>✓ 달러보험 해결책:</strong> 달러 자산을 추가하여 통화 분산 효과를 얻을 수 있습니다. 대부분의 상황에서 달러는 상대적으로 안정적인 편입니다.
                         </div>
                     </div>
                     
                     <div class="worry-item">
                         <h4>📉 "한국 금리로는 수익이 너무 낮아요"</h4>
-                        <p>한국 기준금리 3.25%에서 인플레이션 2~3%를 빼면 실질 수익률은 0.25~1.25%에 불과합니다. 매우 낮은 수익률입니다.</p>
+                        <p>한국 기준금리 3.25%에서 인플레이션 2~3%를 빼면 실질 수익률은 0.25~1.25%에 불과할 수 있습니다. 상대적으로 낮은 수익률이라고 할 수 있습니다.</p>
                         <div class="solution">
-                            <strong>✓ 달러보험 해결책:</strong> 미국 금리 5.0%로 한국보다 1.5%p 더 높은 수익을 얻을 수 있습니다. 보험료 대비 높은 보장도 받을 수 있습니다.<br>
+                            <strong>✓ 달러보험 해결책:</strong> 미국 금리 5.0%로 한국보다 1.5%p 더 높은 수익을 얻을 수 있는 경우가 많습니다. 보험료 대비 높은 보장도 받을 수 있는 경우가 많습니다.<br>
                             <span style="color: #90ee90; font-size: 0.95em;">(미국 금리 5.0% - 한국 금리 3.25% = 1.75%p 차이, 실질 수익률은 약 3% vs 0.25~1.25%)</span>
                         </div>
                     </div>
@@ -917,15 +871,16 @@
                         <h4>⏰ "지금 가입해야 할지, 나중에 가입해야 할지 모르겠어요"</h4>
                         <p>시간이 지날수록 인플레이션으로 인해 자산 가치가 더 많이 떨어집니다. 나중에 가입하면 더 많은 보험료를 내야 할 수도 있습니다.</p>
                         <div class="solution">
-                            <strong>✓ 달러보험 해결책:</strong> 하루라도 빨리 가입하시면 하루 더 긴 기간을 확보할 수 있습니다. 달러 코스트 에버리지 효과로 평균 매입 환율을 낮출 수 있습니다.
+                            <strong>✓ 달러보험 해결책:</strong> 하루라도 빨리 가입하시면 하루 더 긴 기간을 확보할 수 있습니다. 달러 코스트 에버리지 효과로 평균 매입 환율을 낮추는 데 도움이 될 수 있어서 더 유리할 수 있습니다.<br>
+                            지금 결정하지 않으셔도 괜찮습니다. 다만 시간이 지날수록 자산 가치가 더 많이 떨어질 수 있다는 점만 참고해 보시면 좋을 것 같습니다.
                         </div>
                     </div>
                     
                     <div class="worry-item">
                         <h4>🏦 "어떤 달러 상품을 선택해야 할지 모르겠어요"</h4>
-                        <p>달러 금융상품은 많지만, 제대로 투자 관리되는 곳을 찾기 어렵습니다. 신뢰할 수 있는 곳에서 가입하고 싶으신 분.</p>
+                        <p>달러 금융상품은 많지만, 제대로 투자 관리되는 곳을 찾기 어려울 수 있습니다. 신뢰할 수 있는 곳에서 가입하는 방법을 고려해 보고 싶으신 분.</p>
                         <div class="solution">
-                            <strong>✓ 달러보험 해결책:</strong> 달러보험은 전문적인 자산 운용사에서 운용하는 검증된 상품입니다. 큰 규모의 자산을 전문적으로 관리하여 안정적인 수익을 제공합니다.
+                            <strong>✓ 달러보험 해결책:</strong> 달러보험은 전문적인 자산 운용사에서 운용하는 검증된 상품입니다. 큰 규모의 자산을 전문적으로 관리하여 상대적으로 안정적인 수익을 기대해 볼 수 있습니다.
                         </div>
                     </div>
                 </div>
@@ -936,14 +891,49 @@
                 <h2 class="section-title">1. 인플레이션, 피할 수 없는 현실</h2>
                 
                 <div class="section-content">
-                    인플레이션이란 쉽게 말해서 물가가 오르는 것입니다. 작년에 1,000원이었던 물건이 올해는 1,020원이 되는 거죠. 한국은행은 매년 2%의 인플레이션을 목표로 하고 있습니다.
+                    인플레이션이란 쉽게 말해서 물가가 오르는 것입니다. 작년에 1,000원이었던 물건이 올해는 1,020원이 되는 것과 비슷한 개념입니다. 한국은행은 매년 2%의 인플레이션을 목표로 하고 있다고 합니다.
+                </div>
+                
+                <div class="section-content">
+                    이게 무슨 의미인지, 숫자로 보면 이렇습니다.
                 </div>
                 
                 <div class="highlight-box">
-                    예를 들어, 오늘 100만원으로 살 수 있는 것이 내년에는 102만원이 필요하고, 10년 후에는 122만원이 필요합니다. 이것이 인플레이션의 현실입니다.
+                    예를 들어, 오늘 100만원으로 살 수 있는 것이 내년에는 102만원이 필요하고, 10년 후에는 122만원이 필요할 수 있습니다. 이것이 인플레이션의 현실이라고 할 수 있습니다.
                 </div>
                 
-                <div class="stat-box">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>시점</th>
+                            <th>자산 가치</th>
+                            <th>실질 구매력</th>
+                            <th>감소율</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600;">지금</td>
+                            <td class="highlight">100%</td>
+                            <td class="highlight">100%</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">10년 후</td>
+                            <td>100%</td>
+                            <td class="better">82%</td>
+                            <td style="color: #dc3545;">-18%</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">20년 후</td>
+                            <td>100%</td>
+                            <td class="better">67%</td>
+                            <td style="color: #dc3545;">-33%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="stat-box" style="margin-top: 30px;">
                     <div class="stat-item">
                         <div class="label">지금</div>
                         <div class="number">100%</div>
@@ -971,71 +961,9 @@
                 </div>
                 
                 <div class="warning-box">
-                    지금 1억원을 가지고 있다면, 10년 후에는 실질 구매력이 8,200만원 수준으로 떨어집니다. 이것이 인플레이션이 여러분의 자산에 미치는 현실입니다.
-                </div>
-                
-                <div class="info-box" style="margin-top: 30px; background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%); border-left: 5px solid #17a2b8; padding: 30px 40px;">
-                    <h4 style="color: #ffffff; font-size: 1.3em; margin-bottom: 20px; font-weight: 600;">그렇다면 지금 1억원에 해당되는 달러를 가지고 있다면 10년 후에는 어떻게 될까요?</h4>
-                    <p style="color: #e6f7ff; font-size: 1.2em; line-height: 2.2; text-align: justify; margin-bottom: 20px;">
-                        현재 환율 기준(1,472원/달러)으로 1억원은 약 <strong style="color: #ffc107;">$67,935</strong>에 해당합니다.
-                    </p>
-                    <p style="color: #e6f7ff; font-size: 1.2em; line-height: 2.2; text-align: justify; margin-bottom: 20px;">
-                        만약 지금 $67,935를 달러보험에 가입한다면, 미국 금리 5.0%의 수익을 얻을 수 있습니다.
-                    </p>
-                    <div class="table-container">
-                        <h3 class="table-title">10년 후 예상 결과 비교표</h3>
-                        <table class="comparison-table">
-                            <thead>
-                                <tr>
-                                    <th>구분</th>
-                                    <th>원화 1억원 보유</th>
-                                    <th>달러보험 가입</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="label-cell">현재 시점</td>
-                                    <td style="font-size: 1.1em; font-weight: 600;">100,000,000원</td>
-                                    <td style="font-size: 1.1em; font-weight: 600; color: #ffc107;">$67,935<span class="calculation-note">(1억원 환전, 환율 1,472원)</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="label-cell">10년 후 달러 금액</td>
-                                    <td style="color: #999;">-</td>
-                                    <td class="positive" style="font-size: 1.15em; font-weight: 600;">$110,650<span class="calculation-note">($67,935 × 1.05^10)</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="label-cell">인플레이션 고려<br>실질 가치</td>
-                                    <td class="negative" style="font-size: 1.1em; font-weight: 600;">81,790,000원<span class="calculation-note">(약 8,200만원)</span></td>
-                                    <td class="positive" style="font-size: 1.1em; font-weight: 600;">$90,500<span class="calculation-note">($110,650 × 0.98^10)</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="label-cell">원화 환산<br>(환율 1,472원)</td>
-                                    <td class="negative" style="font-size: 1.1em; font-weight: 600;">81,790,000원</td>
-                                    <td class="positive highlight" style="font-size: 1.2em; font-weight: 700;">133,216,000원<span class="calculation-note">(약 1억 3,322만원)</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="label-cell">실질 가치 변화</td>
-                                    <td class="negative" style="font-size: 1.1em; font-weight: 600;">-18,210,000원<span class="calculation-note">(18.21% 감소)</span></td>
-                                    <td class="positive highlight" style="font-size: 1.15em; font-weight: 700;">+33,216,000원<span class="calculation-note">(33.2% 증가)</span></td>
-                                </tr>
-                                <tr style="background: linear-gradient(135deg, #2a4a2a 0%, #3a6a3a 100%);">
-                                    <td class="label-cell" style="font-size: 1.2em; color: #90ee90;">차이</td>
-                                    <td colspan="2" class="highlight" style="font-size: 1.3em;">
-                                        약 <strong style="color: #ffc107;">5,122만원</strong>의 실질 구매력 차이
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div style="background-color: #1a3a1a; padding: 25px; border-radius: 10px; margin-top: 20px; border-left: 4px solid #28a745;">
-                        <p style="color: #90ee90; font-size: 1.25em; line-height: 2.2; text-align: justify; font-weight: 600;">
-                            <strong>결론:</strong><br>
-                            같은 1억원이지만, 달러보험에 가입하면:<br>
-                            • 원화 보유: 10년 후 실질 구매력 <strong style="color: #dc3545;">8,200만원</strong> (1,800만원 감소)<br>
-                            • 달러보험: 10년 후 실질 구매력 <strong style="color: #28a745;">약 1억 3,322만원</strong> (3,322만원 증가)<br>
-                            • 차이: 약 <strong style="color: #ffc107;">5,122만원</strong>의 실질 구매력 차이 발생
-                        </p>
-                    </div>
+                    지금 1억원을 가지고 있다면, 10년 후에는 실질 구매력이 8,200만원 수준으로 떨어집니다.<br>
+                    하루하루 버티느라 바빠서 정작 '미래'는 나중으로 미뤄두기 쉽지만,<br>
+                    이 숫자는 우리가 피할 수 없는 현실입니다.
                 </div>
             </div>
             
@@ -1044,12 +972,44 @@
                 <h2 class="section-title">2. 원화만 보유하면 어떻게 될까요?</h2>
                 
                 <div class="section-content">
-                    만약 여러분의 모든 자산이 원화로만 되어 있다면, 이것은 매우 위험합니다. 인플레이션에 그대로 노출되고, 원화 가치가 떨어지면 모든 자산이 동시에 가치가 떨어지기 때문입니다.
+                    우리가 월급을 받는 통화는 원화지만, 우리가 살아갈 세상의 기준은 점점 달러에 맞춰지고 있는 것 같습니다.<br>
+                    만약 여러분의 모든 자산이 원화로만 되어 있다면, 인플레이션에 그대로 노출될 수 있고, 원화 가치가 떨어지면 모든 자산이 동시에 가치가 떨어질 수 있기 때문입니다.
                 </div>
                 
                 <div class="info-box">
                     한국 기준금리는 3.25%이고 인플레이션은 2~3%입니다. 실질 수익률은 0.25~1.25%에 불과합니다. 반면 미국 기준금리는 5.0%로 한국보다 1.5%p 더 높습니다.
                 </div>
+                
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>한국</th>
+                            <th>미국</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600;">기준금리</td>
+                            <td>3.25%</td>
+                            <td class="highlight">5.0%</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">인플레이션</td>
+                            <td>2~3%</td>
+                            <td>약 2%</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">실질 수익률</td>
+                            <td>0.25~1.25%</td>
+                            <td class="better">약 3%</td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">금리 차이</td>
+                            <td colspan="2" class="highlight">1.75%p (약 1.5%p) 차이</td>
+                        </tr>
+                    </tbody>
+                </table>
                 
                 <div class="calculation-box">
                     <h4>📊 계산 근거</h4>
@@ -1063,7 +1023,8 @@
                 </div>
                 
                 <div class="warning-box">
-                    원화만 가지고 있으면, 인플레이션에 그대로 노출됩니다. 원화 가치가 떨어지면 모든 자산이 동시에 가치가 떨어지는 거죠. 이것이 통화 분산이 필요한 이유입니다.
+                    원화만 가지고 있으면, 인플레이션에 그대로 노출될 수 있습니다. 원화 가치가 떨어지면 모든 자산이 동시에 가치가 떨어질 수 있는 거죠.<br>
+                    그래서 <strong>달러 자산을 얼마나, 어떤 방식으로 보유할지</strong>는 더 이상 특정 계층만의 고민이 아니라, 보통 직장인·자영업자·프리랜서에게도 고려해 볼 만한 선택지가 되고 있는 것 같습니다.
                 </div>
             </div>
             
@@ -1072,40 +1033,85 @@
                 <h2 class="section-title">3. 달러보험, 확실한 해결책</h2>
                 
                 <div class="section-content">
-                    달러보험은 단순한 보험이 아닙니다. 인플레이션 시대에 여러분의 자산을 보호하는 가장 확실한 방법입니다.
+                    '보험'이라는 단어를 들으면 왠지 부담스럽고, 당장 거절부터 하고 싶어질 수 있습니다.<br>
+                    하지만 이 페이지에서 말하는 달러보험은 단순한 보험이 아닙니다. 인플레이션 시대에 여러분의 자산을 보호하는 방법 중 하나로 생각해 보시면 좋을 것 같습니다.
+                </div>
+                
+                <div class="diagram-box">
+                    <h3>달러보험 구조 이해하기</h3>
+                    <div class="flow-diagram">
+                        <div class="flow-step">
+                            <div class="step-number">1</div>
+                            <div class="step-title">매달 납입</div>
+                            <div class="step-desc">일정 금액을<br>달러로 납입</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">2</div>
+                            <div class="step-title">장기 적립</div>
+                            <div class="step-desc">달러로<br>장기 적금처럼 쌓기</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">3</div>
+                            <div class="step-title">환율·물가 대응</div>
+                            <div class="step-desc">환율과 물가 상승에<br>어느 정도 대응</div>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-number">4</div>
+                            <div class="step-title">기본 보장</div>
+                            <div class="step-desc">예기치 못한 상황에 대한<br>보장까지 챙기기</div>
+                        </div>
+                    </div>
+                    <div class="section-content" style="text-align: center; margin-top: 30px; color: #e6f7ff;">
+                        '복잡한 금융상품'이라기보다 <strong>"달러로 장기 저축 + 기본 보장"</strong>이라고 이해하시면 더 가까울 수 있습니다.
+                    </div>
                 </div>
                 
                 <div class="benefit-list">
                     <h3>달러보험의 5가지 장점</h3>
                     <ul>
-                        <li><strong>달러는 세계 기축통화</strong> - 어떤 상황에서도 가치가 보존됩니다. 미국 경제가 좋을 때도, 나쁠 때도 달러는 강세입니다.</li>
-                        <li><strong>미국 금리 5.0%</strong> - 한국 금리 3.25%보다 1.5%p 더 높아서 더 많은 수익을 얻을 수 있습니다.</li>
-                        <li><strong>보험료 대비 높은 보장</strong> - 납입한 보험료보다 더 많은 보험금을 받을 수 있습니다.</li>
-                        <li><strong>달러 코스트 에버리지</strong> - 긴 기간 동안 납입하면 평균 매입 환율을 낮출 수 있어서 더 유리합니다.</li>
-                        <li><strong>1달러당 2원</strong> - 시중은행 대비 1/10 수준의 저렴한 환전 수수료입니다.</li>
+                        <li><strong>달러는 세계 기축통화</strong> - 대부분의 상황에서 가치가 상대적으로 안정적입니다. 미국 경제가 좋을 때도, 나쁠 때도 달러는 대체로 강세를 보이는 편입니다.</li>
+                        <li><strong>미국 금리 5.0%</strong> - 한국 금리 3.25%보다 1.5%p 더 높아서 더 많은 수익을 얻을 수 있는 경우가 많습니다.</li>
+                        <li><strong>보험료 대비 높은 보장</strong> - 납입한 보험료보다 더 많은 보험금을 받을 수 있는 경우가 많습니다.</li>
+                        <li><strong>달러 코스트 에버리지</strong> - 긴 기간 동안 납입하면 평균 매입 환율을 낮추는 데 도움이 될 수 있어서 더 유리할 수 있습니다.</li>
+                        <li><strong>1달러당 2원</strong> - 시중은행 대비 1/10 수준의 저렴한 환전 수수료라고 합니다.</li>
                     </ul>
                 </div>
                 
-                <div class="stat-box">
-                    <div class="stat-item">
-                        <div class="label">납입보험료</div>
-                        <div class="number">$13,129</div>
-                        <div class="label">7년간</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="label">10년 후</div>
-                        <div class="number">124.75%</div>
-                        <div class="label">해약환급금</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="label">20년 후</div>
-                        <div class="number">134.86%</div>
-                        <div class="label">해약환급금</div>
-                    </div>
-                </div>
+                <table class="comparison-table" style="margin-top: 30px;">
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>납입보험료</th>
+                            <th>10년 후</th>
+                            <th>20년 후</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 600;">해약환급금</td>
+                            <td class="highlight">$13,129<br><span style="font-size: 0.9em; color: #b0b0b0;">(7년간)</span></td>
+                            <td class="better">$16,379<br><span style="font-size: 0.9em; color: #90ee90;">(124.75%)</span></td>
+                            <td class="better">$17,706<br><span style="font-size: 0.9em; color: #90ee90;">(134.86%)</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 600;">수익률</td>
+                            <td>-</td>
+                            <td class="better">연평균 약 3.54%</td>
+                            <td class="better">연평균 약 4.98%</td>
+                        </tr>
+                    </tbody>
+                </table>
                 
                 <div class="section-content" style="text-align: center; color: #ffc107; font-weight: 600; margin-top: 20px;">
                     (40세 남자, 7년납, 10만달러 기준)
+                </div>
+                
+                <div class="section-content" style="text-align: center; margin-top: 20px;">
+                    여기서 약속드릴 수 있는 건 "몇 % 수익" 같은 화려한 수치는 아닙니다.<br>
+                    대신, 실제 보험 구조를 바탕으로 구체적인 숫자를 보여드릴 수 있습니다.
                 </div>
                 
                 <div class="calculation-box">
@@ -1122,22 +1128,28 @@
                         20년 후: (134.86% - 100%) ÷ 7년 = <span class="result">연평균 약 4.98%</span>
                     </div>
                 </div>
+                
+                <div class="info-box" style="margin-top: 30px;">
+                    위 숫자는 실제 보험 구조를 바탕으로 한 계산입니다.<br>
+                    엑셀을 켜서 혼자 계산하기보다, 전문가와 나란히 앉아 시뮬레이션을 돌려보는 느낌에 가까울 수 있습니다.
+                </div>
             </div>
             
             <!-- 섹션 4: 지금 가입해야 하는 이유 -->
             <div class="section">
-                <h2 class="section-title">4. 지금 가입하지 않으면 나중에 후회합니다</h2>
+                <h2 class="section-title">4. 지금 가입해야 하는 이유</h2>
                 
                 <div class="section-content">
-                    시간은 여러분을 기다려주지 않습니다. 지금 가입하지 않으면 인플레이션으로 인해 실질 구매력이 계속 감소하고, 나중에 가입하면 더 많은 보험료를 내야 할 수 있습니다.
+                    시간은 여러분을 기다려주지 않습니다. 지금 가입하지 않으면 인플레이션으로 인해 실질 구매력이 계속 감소할 수 있고, 나중에 가입하면 더 많은 보험료를 내야 할 수도 있습니다.
                 </div>
                 
                 <div class="warning-box">
-                    지금 가입하지 않으시면 노후 자금이 예상보다 훨씬 부족해질 수 있고, 자녀 교육비 부담이 예상보다 커질 수 있습니다. 시간이 지날수록 자산 가치가 더 많이 떨어집니다.
+                    지금 가입하지 않으시면 노후 자금이 예상보다 부족해질 수 있고, 자녀 교육비 부담이 예상보다 커질 수 있습니다. 시간이 지날수록 자산 가치가 더 많이 떨어질 수 있습니다.
                 </div>
                 
                 <div class="highlight-box">
-                    하루라도 빨리 가입하시면, 하루 더 긴 기간을 확보할 수 있습니다. 그리고 그 하루가 10년 후, 20년 후에 큰 차이를 만듭니다.
+                    하루라도 빨리 가입하시면, 하루 더 긴 기간을 확보할 수 있습니다. 그리고 그 하루가 10년 후, 20년 후에 차이를 만들 수 있습니다.<br>
+                    달러 코스트 에버리지 효과로 평균 매입 환율을 낮추는 데 도움이 될 수 있어서 더 유리할 수 있습니다.
                 </div>
             </div>
             
@@ -1152,74 +1164,73 @@
                         전문 자산 운용사 총 자산 규모
                     </p>
                     <span class="big-number">5,876억 달러</span>
-                    <p>한국 외화보유액보다 큰 규모입니다</p>
+                    <p>한국 외화보유액보다 큰 규모라고 합니다</p>
                     
                     <div class="benefit-list" style="background-color: #1a1a1a; margin-top: 30px;">
                         <ul>
-                            <li><strong>이미 10만명 이상의 고객</strong>이 선택한 검증된 상품입니다</li>
-                            <li><strong>국내 최다 달러보험 라인업</strong> - 다양한 상품으로 여러분의 목적에 맞춤</li>
-                            <li><strong>1달러당 2원</strong> - 시중은행 대비 1/10 수준의 저렴한 환전 수수료</li>
-                            <li><strong>전문적인 달러 자산 관리</strong> - 글로벌 자산 운용사의 노하우</li>
+                            <li><strong>이미 10만명 이상의 고객</strong>이 선택한 검증된 상품 중 하나입니다</li>
+                            <li><strong>국내 최다 달러보험 라인업</strong> - 다양한 상품으로 여러분의 목적에 맞춤할 수 있습니다</li>
+                            <li><strong>1달러당 2원</strong> - 시중은행 대비 1/10 수준의 저렴한 환전 수수료라고 합니다</li>
+                            <li><strong>전문적인 달러 자산 관리</strong> - 글로벌 자산 운용사의 노하우를 활용합니다</li>
                         </ul>
                     </div>
                     
-                    <p style="font-size: 1.4em; margin-top: 30px; font-weight: 600;">
-                        달러 금융상품은 많지만, 제대로 투자 관리되는 곳에서 가입하는 것이 중요합니다.
+                    <p style="font-size: 1.4em; margin-top: 30px; font-weight: 600; text-align: center; color: #fff9e6;">
+                        달러 금융상품은 많지만, 제대로 투자 관리되는 곳에서 가입하는 것이 중요할 수 있습니다.<br>
+                        달러보험은 전문적인 자산 운용사에서 운용하는 검증된 상품 중 하나로 생각해 보시면 좋을 것 같습니다.
                     </p>
                 </div>
             </div>
             
-            <!-- 자녀를 위한 유리함 -->
-            <div class="emotional-section">
-                <h3>자녀를 위한 선택</h3>
-                <p>
-                    지금 이 어려운 시기를 살아가고 있지만, 우리의 자녀들은 더 어려운 미래를 맞이할 수 있습니다. 교육비는 계속 오르고, 취업은 더 어려워지고, 주거비는 부담스러워집니다.
-                </p>
-                <p>
-                    하지만 지금부터 달러보험으로 강제적으로라도 자금을 축적해놓는다면, 10년 후, 20년 후에는 자녀의 대학 등록금, 유학비, 결혼자금, 주거비 등에 도움이 될 수 있습니다.
-                </p>
-                <p style="color: #ffc107; font-weight: 600; font-size: 1.3em; margin-top: 25px;">
-                    지금의 작은 선택이 자녀의 미래를 바꿀 수 있습니다.
-                </p>
+            <!-- 섹션 6: 자주 받는 질문 -->
+            <div class="section">
+                <h2 class="section-title">자주 받는 질문</h2>
+                
+                <div class="benefit-list" style="background-color: #1a1a1a; padding: 40px; border-radius: 15px; margin: 40px 0; border: 2px solid #444;">
+                    <div style="margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #444;">
+                        <h3 style="color: #667eea; font-size: 1.4em; margin-bottom: 15px; font-weight: 600;">Q1. 지금 환율이 너무 높은데, 달러로 들어가도 괜찮을까요?</h3>
+                        <p style="color: #e8e8e8; font-size: 1.15em; line-height: 2.1; text-align: justify;">
+                            '지금이 꼭 저점'이라고 말하진 않겠습니다.<br>
+                            그래서 <strong>한 번에 큰 금액을 넣기보다, 시간에 나눠서</strong> 달러를 쌓는 방식을 권해드릴 수 있습니다.<br>
+                            환율이 오르든 내리든 평균 단가를 맞춰가는 구조를 같이 설계해 드릴 수 있습니다.
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid #444;">
+                        <h3 style="color: #667eea; font-size: 1.4em; margin-bottom: 15px; font-weight: 600;">Q2. 기존에 들고 있는 보험과 뭐가 다른가요?</h3>
+                        <p style="color: #e8e8e8; font-size: 1.15em; line-height: 2.1; text-align: justify;">
+                            가장 큰 차이는 <strong>저축/적립 통화가 달러</strong>라는 점입니다.<br>
+                            보장의 뼈대는 기존 보험과 비슷하지만, 적립되는 자산이 달러로 쌓인다는 점에서 장기적인 구매력 방어에 차이가 생길 수 있습니다.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 style="color: #667eea; font-size: 1.4em; margin-bottom: 15px; font-weight: 600;">Q3. 수수료나 사업비가 걱정됩니다.</h3>
+                        <p style="color: #e8e8e8; font-size: 1.15em; line-height: 2.1; text-align: justify;">
+                            수수료·사업비는 숨기지 않고, "같은 돈을 다른 금융상품에 넣었을 때와 비교"해서 설명해 드릴 수 있습니다.<br>
+                            비교 후에 굳이 선택하지 않으셔도 괜찮습니다.
+                        </p>
+                    </div>
+                </div>
             </div>
             
-            <!-- 강제적 자금 축적의 필요성 -->
-            <div class="cta-flow">
-                <h3>미래를 위한 강제적 자금 축적</h3>
-                <p>
-                    지금 이 어려운 국면에서, 미래를 긍정적으로 검토하고 준비하는 것이 중요합니다. 하지만 매월 저축하기는 쉽지 않습니다. 그럴 때 필요한 것이 바로 달러보험입니다.
-                </p>
-                <p>
-                    달러보험은 매월 보험료를 납입하는 강제적 저축의 효과가 있습니다. 중도 해지가 어렵기 때문에, 어려운 시기에도 꾸준히 자금을 축적할 수 있습니다.
-                </p>
-                <p class="highlight-text">
-                    이것만이 미래의 살길입니다.
-                </p>
-                <p>
-                    지금 주저하지 마세요. 10년 후, 20년 후의 여러분과 자녀들을 위해 지금 결정하세요.
-                </p>
-            </div>
-            
-            <!-- 최종 CTA - 세부상담 신청으로 자연스럽게 연결 -->
+            <!-- 최종 제안 -->
             <div class="cta-section">
-                <h2>지금 바로 시작하세요</h2>
+                <h2>가볍게 상담부터 받아보기</h2>
                 
-                <p style="font-size: 1.4em; margin-bottom: 30px;">
-                    같은 1억원이지만, 달러보험에 가입하면 10년 후 실질 구매력이 <strong style="color: #ffc107;">약 5,122만원</strong> 더 큽니다.
-                </p>
-                
-                <p style="font-size: 1.3em; margin-bottom: 40px; line-height: 2.4;">
-                    지금 이 어려운 시기를 함께 버티고, 미래를 함께 준비하겠습니다.<br>
-                    주저하지 마시고, 아래의 세부상담 신청 버튼을 클릭해주세요.
+                <p>
+                    인플레이션은 피할 수 없습니다. 하지만 여러분은 선택할 수 있습니다.<br><br>
+                    
+                    원화 자산만 보유하며 실질 구매력을 잃어가시겠습니까?<br>
+                    아니면 달러보험으로 자산을 보호하며 미래를 준비하시겠습니까?<br><br>
+                    
+                    <strong style="font-size: 1.3em;">여러분의 선택이 10년 후, 20년 후의 삶에 영향을 줄 수 있습니다.</strong>
                 </p>
                 
                 <div style="background-color: rgba(255,255,255,0.15); padding: 40px; border-radius: 15px; margin-top: 40px;">
-                    <p style="font-size: 1.5em; font-weight: 600; margin-bottom: 30px;">
-                        여러분의 미래와 자녀의 미래를 위해<br>
-                        지금 바로 달러보험 가입을 시작하세요.
-                    </p>
-                    <p style="font-size: 1.2em; color: #ffc107; font-weight: 600;">
-                        ↓ 아래 세부상담 신청 버튼을 클릭해주세요 ↓
+                    <p style="font-size: 1.4em; font-weight: 500; line-height: 2.2;">
+                        당장 가입이 부담되신다면, '설명만 듣고 싶어요'라고 남겨 주세요.<br>
+                        가입 권유보다 '설명'이 먼저라고 생각합니다. 편하게 물어보세요.
                     </p>
                 </div>
             </div>
@@ -1228,17 +1239,21 @@
         <!-- 푸터 및 상담 신청 -->
         <div class="footer">
             <p style="font-weight: 600; margin-bottom: 20px; color: #e8e8e8; font-size: 1.2em;">본 자료는 달러보험 가입 제안서입니다.</p>
-            <p style="margin-bottom: 15px; color: #b0b0b0;">상품에 대한 자세한 내용은 상품 설명서 및 약관을 참고하시기 바랍니다.</p>
-            <p style="margin-bottom: 30px; color: #dc3545; font-size: 0.95em; font-weight: 600; border-top: 1px solid #444; padding-top: 15px;">
-                ⚠️ 저작권 보호: 본 자료의 모든 내용은 저작권법에 의해 보호됩니다. 무단 복제, 배포, 수정, 상업적 이용을 금지합니다. 위반 시 법적 책임을 질 수 있습니다.
-            </p>
+            <p style="margin-bottom: 30px; color: #b0b0b0;">상품에 대한 자세한 내용은 상품 설명서 및 약관을 참고하시기 바랍니다.</p>
+            
+            <div style="margin-bottom: 20px;">
+                <p style="font-size: 1.1em; color: #b0b0b0; margin-bottom: 15px;">
+                    아래 방법 중 편하신 방식을 선택해 주세요.
+                </p>
+                <p style="font-size: 1.1em; color: #e8e8e8; margin-bottom: 10px;">
+                    <strong>1:1 카톡 / 문자 상담:</strong> 링크 클릭 후, '달러보험 상담'이라고만 남겨 주세요.<br>
+                    <strong>ZOOM / 전화 상담 예약:</strong> 시간 맞추기 어려우시면, 퇴근 후·주말 상담도 조율해 볼 수 있습니다.
+                </p>
+            </div>
             
             <button class="consult-btn" onclick="openModal()">세부상담 신청</button>
             <p style="margin-top: 20px; font-size: 1.3em;">
-                <a href="tel:010-2088-5383" style="color: #667eea; font-weight: 600; text-decoration: none; transition: all 0.3s ease; display: inline-block;">📞 010-2088-5383</a>
-            </p>
-            <p style="margin-top: 10px; font-size: 0.9em; color: #999; font-style: italic;">
-                직접통화는 실시간이므로 사정상 통화가 어려울 수도 있으니 널리 양해 부탁드립니다.
+                <a href="tel:010-2088-5383" style="color: #667eea; font-weight: 600; text-decoration: none; transition: all 0.3s ease; display: inline-block;">010-2088-5383</a>
             </p>
         </div>
     </div>
@@ -1372,79 +1387,6 @@
                 });
             }
         });
-        
-        // 복제 방지 기능
-        (function() {
-            // 우클릭 방지
-            document.addEventListener('contextmenu', function(e) {
-                e.preventDefault();
-                alert('이 페이지의 내용은 저작권이 보호됩니다.');
-                return false;
-            });
-            
-            // 키보드 단축키 방지
-            document.addEventListener('keydown', function(e) {
-                // Ctrl+C, Ctrl+A, Ctrl+S, Ctrl+P, Ctrl+U, F12 등 방지
-                if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 65 || e.keyCode === 83 || e.keyCode === 80 || e.keyCode === 85)) {
-                    e.preventDefault();
-                    alert('이 페이지의 내용은 복제할 수 없습니다.');
-                    return false;
-                }
-                // F12 (개발자 도구) 방지
-                if (e.keyCode === 123) {
-                    e.preventDefault();
-                    alert('개발자 도구는 사용할 수 없습니다.');
-                    return false;
-                }
-                // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C 방지
-                if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
-                    e.preventDefault();
-                    alert('개발자 도구는 사용할 수 없습니다.');
-                    return false;
-                }
-            });
-            
-            // 텍스트 선택 시 경고
-            document.addEventListener('selectstart', function(e) {
-                // 입력 필드는 선택 허용
-                if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
-                    return true;
-                }
-            });
-            
-            // 드래그 방지
-            document.addEventListener('dragstart', function(e) {
-                if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-                    e.preventDefault();
-                    return false;
-                }
-            });
-            
-            // 개발자 도구 감지
-            let devtools = {open: false};
-            setInterval(function() {
-                if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
-                    if (!devtools.open) {
-                        devtools.open = true;
-                        alert('개발자 도구 사용이 감지되었습니다. 이 페이지의 내용은 저작권이 보호됩니다.');
-                    }
-                } else {
-                    devtools.open = false;
-                }
-            }, 500);
-            
-            // 페이지 복사 방지
-            document.addEventListener('copy', function(e) {
-                e.clipboardData.setData('text/plain', '이 페이지의 내용은 저작권이 보호됩니다. 복제 및 무단 사용을 금지합니다.');
-                e.preventDefault();
-                alert('이 페이지의 내용은 복제할 수 없습니다.');
-            });
-            
-            // 페이지 인쇄 방지
-            window.addEventListener('beforeprint', function() {
-                alert('이 페이지는 인쇄할 수 없습니다.');
-            });
-        })();
     </script>
 </body>
 </html>
