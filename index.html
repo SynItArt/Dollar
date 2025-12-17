@@ -1718,8 +1718,16 @@
         function drawChart(data) {
             const svg = document.getElementById('valueChartSvg');
             const container = document.getElementById('valueChartContainer');
+            if (!svg || !container) return;
+
             const isMobile = window.innerWidth <= 900;
-            const width = container.clientWidth - (isMobile ? 20 : 40);
+            // 컨테이너 폭이 0인 경우(레이아웃 전) 부모 폭을 참고하거나 기본값 사용
+            let width = container.clientWidth;
+            if (!width || width < 200) {
+                const parent = container.parentElement;
+                width = (parent && parent.clientWidth ? parent.clientWidth : 800);
+            }
+            width = width - (isMobile ? 20 : 40);
             const height = isMobile ? 300 : 350;
             const margin = { 
                 top: isMobile ? 30 : 20, 
@@ -2034,8 +2042,16 @@
             ];
             
             const container = document.getElementById('rateLineChart');
+            const svg = document.getElementById('chartLines');
+            if (!container || !svg) return;
+
             const isMobile = window.innerWidth <= 900;
-            const width = container.clientWidth;
+            // 컨테이너 폭이 0인 경우 부모 폭이나 기본값 사용
+            let width = container.clientWidth;
+            if (!width || width < 200) {
+                const parent = container.parentElement;
+                width = (parent && parent.clientWidth ? parent.clientWidth : 800);
+            }
             const height = isMobile ? 300 : 350;
             const margin = { 
                 top: isMobile ? 35 : 30, 
@@ -2047,7 +2063,6 @@
             const chartHeight = height - margin.top - margin.bottom;
             
             // SVG 초기화
-            const svg = document.getElementById('chartLines');
             svg.setAttribute('width', width);
             svg.setAttribute('height', height);
             svg.innerHTML = '';
