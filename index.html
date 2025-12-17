@@ -573,6 +573,227 @@
             transform: scale(0.98);
         }
         
+        /* 가치 추이 비교 그래프 스타일 */
+        .calculator-section {
+            background: linear-gradient(135deg, #2a2a3a 0%, #3a3a4a 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+            border: 2px solid #667eea;
+        }
+        
+        .calculator-section h3 {
+            color: #ffffff;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .payment-options, .rate-options {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .payment-btn, .rate-btn {
+            padding: 15px 30px;
+            background: #1a1a1a;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            color: #e8e8e8;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-btn:hover, .rate-btn:hover {
+            background: #667eea;
+            transform: translateY(-2px);
+        }
+        
+        .payment-btn.active, .rate-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-color: #764ba2;
+            color: white;
+        }
+        
+        .rate-scenario-info {
+            text-align: center;
+            padding: 20px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 10px;
+            margin: 20px 0;
+            color: #fff9e6;
+        }
+        
+        .chart-container {
+            margin: 30px 0;
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .value-chart-container {
+            width: 100%;
+            height: 400px;
+            position: relative;
+        }
+        
+        .value-chart-svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .comparison-table-calc {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .comparison-table-calc th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        
+        .comparison-table-calc td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #444;
+            color: #e8e8e8;
+            font-size: 1em;
+        }
+        
+        .comparison-table-calc tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table-calc tr:nth-child(even) {
+            background: #2a2a2a;
+        }
+        
+        /* 환율 추이 비교 그래프 스타일 */
+        .rate-history-section {
+            background: linear-gradient(135deg, #2a2a3a 0%, #3a3a4a 100%);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+            border: 2px solid #17a2b8;
+        }
+        
+        .rate-history-section h3 {
+            color: #ffffff;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .rate-chart-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: #1a1a1a;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .rate-line-chart {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .chart-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .chart-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+        
+        .chart-points {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+        }
+        
+        .chart-labels {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 4;
+        }
+        
+        .chart-y-axis {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+        
+        .legend-color-past {
+            background: #17a2b8;
+        }
+        
+        .legend-color-future {
+            background: #ffc107;
+        }
+        
+        .legend-text {
+            color: #e8e8e8;
+            font-size: 1em;
+        }
+        
+        .comparison-summary {
+            background: rgba(23, 162, 184, 0.1);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            color: #e6f7ff;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
         @media (max-width: 900px) {
             .container {
                 width: calc(100% - 24px);
@@ -673,7 +894,7 @@
                     
                     <div class="target-item">
                         <h4>💼 높은 수익을 원하시는 분</h4>
-                        <p>한국 금리보다 높은 수익을 원하시는 분. 미국 금리 5.0%로 한국 금리 3.25%보다 1.5%p 더 높은 수익을 얻을 수 있습니다.</p>
+                        <p>한국 금리보다 높은 수익을 원하시는 분. 미국 금리 3.75%로 한국 금리 2.50%보다 1.25%p 더 높은 수익을 얻을 수 있습니다.</p>
                     </div>
                     
                     <div class="target-item">
@@ -694,8 +915,8 @@
                         <h4>😰 "10년 후, 내 자산이 얼마나 남을까 걱정돼요"</h4>
                         <p>인플레이션으로 인해 지금 1억원이 10년 후에는 실질 구매력이 8,200만원 수준으로 떨어집니다. 원화만 보유하면 자산 가치가 계속 감소합니다.</p>
                         <div class="solution">
-                            <strong>✓ 달러보험 해결책:</strong> 달러 자산으로 인플레이션에 대응하여 실질 구매력을 보존할 수 있습니다. 미국 금리 5.0%로 더 높은 수익을 얻을 수 있습니다.<br>
-                            <span style="color: #90ee90; font-size: 0.95em;">(미국 금리 5.0% - 인플레이션 2% = 실질 수익률 약 3%)</span>
+                            <strong>✓ 달러보험 해결책:</strong> 달러 자산으로 인플레이션에 대응하여 실질 구매력을 보존할 수 있습니다. 미국 금리 3.75%로 더 높은 수익을 얻을 수 있습니다.<br>
+                            <span style="color: #90ee90; font-size: 0.95em;">(미국 금리 3.75% - 인플레이션 2% = 실질 수익률 약 1.75%)</span>
                         </div>
                     </div>
                     
@@ -709,10 +930,10 @@
                     
                     <div class="worry-item">
                         <h4>📉 "한국 금리로는 수익이 너무 낮아요"</h4>
-                        <p>한국 기준금리 3.25%에서 인플레이션 2~3%를 빼면 실질 수익률은 0.25~1.25%에 불과합니다. 매우 낮은 수익률입니다.</p>
+                        <p>한국 기준금리 2.50%에서 인플레이션 2%를 빼면 실질 수익률은 약 0.5%에 불과합니다. 매우 낮은 수익률입니다.</p>
                         <div class="solution">
-                            <strong>✓ 달러보험 해결책:</strong> 미국 금리 5.0%로 한국보다 1.5%p 더 높은 수익을 얻을 수 있습니다. 보험료 대비 높은 보장도 받을 수 있습니다.<br>
-                            <span style="color: #90ee90; font-size: 0.95em;">(미국 금리 5.0% - 한국 금리 3.25% = 1.75%p 차이, 실질 수익률은 약 3% vs 0.25~1.25%)</span>
+                            <strong>✓ 달러보험 해결책:</strong> 미국 금리 3.75%로 한국보다 1.25%p 더 높은 수익을 얻을 수 있습니다. 보험료 대비 높은 보장도 받을 수 있습니다.<br>
+                            <span style="color: #90ee90; font-size: 0.95em;">(미국 금리 3.75% - 한국 금리 2.50% = 1.25%p 차이, 실질 수익률은 약 1.75% vs 0.5%)</span>
                         </div>
                     </div>
                     
@@ -787,22 +1008,131 @@
                 </div>
                 
                 <div class="info-box">
-                    한국 기준금리는 3.25%이고 인플레이션은 2~3%입니다. 실질 수익률은 0.25~1.25%에 불과합니다. 반면 미국 기준금리는 5.0%로 한국보다 1.5%p 더 높습니다.
+                    한국 기준금리는 2.50%이고 인플레이션은 2%입니다. 실질 수익률은 약 0.5%에 불과합니다. 반면 미국 기준금리는 3.75%로 한국보다 1.25%p 더 높습니다.
                 </div>
                 
                 <div class="calculation-box">
                     <h4>📊 계산 근거</h4>
                     <div class="formula">
                         <strong>한국 실질 수익률 계산:</strong><br>
-                        한국 기준금리 3.25% - 인플레이션 2% = <span class="result">1.25%</span><br>
-                        한국 기준금리 3.25% - 인플레이션 3% = <span class="result">0.25%</span><br><br>
+                        한국 기준금리 2.50% - 인플레이션 2% = <span class="result">0.5%</span><br><br>
+                        <strong>미국 실질 수익률 계산:</strong><br>
+                        미국 기준금리 3.75% - 인플레이션 2% = <span class="result">1.75%</span><br><br>
                         <strong>한미 금리 차이:</strong><br>
-                        미국 기준금리 5.0% - 한국 기준금리 3.25% = <span class="result">1.75%p (약 1.5%p)</span>
+                        미국 기준금리 3.75% - 한국 기준금리 2.50% = <span class="result">1.25%p</span><br>
+                        실질 수익률 차이: 1.75% - 0.5% = <span class="result">1.25%p</span>
                     </div>
                 </div>
                 
                 <div class="warning-box">
                     원화만 가지고 있으면, 인플레이션에 그대로 노출됩니다. 원화 가치가 떨어지면 모든 자산이 동시에 가치가 떨어지는 거죠. 이것이 통화 분산이 필요한 이유입니다.
+                </div>
+                
+                <!-- 가치 추이 비교 그래프 섹션 -->
+                <div class="calculator-section" style="margin-top: 40px;">
+                    <h3>달러보험 납입 기간별 가치 추이</h3>
+                    <div class="payment-options">
+                        <button class="payment-btn" data-years="5" onclick="updateCalculator(5, this)">5년납</button>
+                        <button class="payment-btn active" data-years="7" onclick="updateCalculator(7, this)">7년납</button>
+                        <button class="payment-btn" data-years="10" onclick="updateCalculator(10, this)">10년납</button>
+                    </div>
+                    <div style="text-align: center; margin: 15px 0; color: #17a2b8; font-size: 1.1em; font-weight: 600;">
+                        현재 선택: <span id="selectedPaymentYears">7년납</span>
+                    </div>
+                    <div style="text-align: center; margin-bottom: 15px;">
+                        <strong style="color: #ffc107; font-size: 1.1em;">10년 후 환율 시나리오 선택:</strong>
+                    </div>
+                    <div class="rate-options">
+                        <button class="rate-btn" data-rate="1500" onclick="updateRate(1500, this)">1,500원</button>
+                        <button class="rate-btn" data-rate="1600" onclick="updateRate(1600, this)">1,600원</button>
+                        <button class="rate-btn active" data-rate="1700" onclick="updateRate(1700, this)">1,700원</button>
+                        <button class="rate-btn" data-rate="1800" onclick="updateRate(1800, this)">1,800원</button>
+                    </div>
+                    <div class="rate-scenario-info" id="rateInfo">
+                        <strong>현재 선택된 환율 시나리오: 1,700원</strong><br>
+                        <span style="color: #fff9e6; font-size: 0.95em;">환율이 높을수록 달러 자산의 원화 환산 가치가 더 크게 증가합니다.</span>
+                    </div>
+                    <div class="chart-container">
+                        <div class="value-chart-container" id="valueChartContainer">
+                            <svg class="value-chart-svg" id="valueChartSvg"></svg>
+                        </div>
+                    </div>
+                    <table class="comparison-table-calc" id="comparisonTable">
+                        <thead>
+                            <tr>
+                                <th>연도</th>
+                                <th>원화 자산<br>(1억원 기준)</th>
+                                <th>달러 자산<br>(원화 환산)</th>
+                                <th>차이</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                        </tbody>
+                    </table>
+                    <div class="info-box" style="margin-top: 30px;">
+                        <strong>📊 계산 기준 및 적용 조건:</strong><br>
+                        • 초기 투자금: 1억원<br>
+                        • 현재 환율: 1달러 = 1,472원<br>
+                        • 한국 기준금리: 2.50%, 실질 수익률: 0.5%<br>
+                        • 미국 기준금리: 3.75%, 실질 수익률: 1.75%<br>
+                        • 인플레이션: 2%<br>
+                        • 10년 후 환율 가정: <span id="selectedRate">1,700원</span> (원화 약세 추세, 시나리오 선택 가능)<br>
+                        <br>
+                        <strong style="color: #ffc107;">💡 달러보험 해약환급금률 가정 시나리오:</strong><br>
+                        • <strong>5년납</strong>: <strong>5년 후 만기 해약환급금 수익률 120%</strong> (납입 완료 시점 = 만기), 10년 후 132%<br>
+                        • <strong>7년납</strong>: <strong>7년 후 만기 해약환급금 수익률 120%</strong> (납입 완료 시점 = 만기), 10년 후 130%<br>
+                        • <strong>10년납</strong>: <strong>10년 후 만기 해약환급금 수익률 120%</strong> (납입 완료 시점 = 만기)<br>
+                        <br>
+                        <span style="color: #fff9e6; font-size: 0.95em;">
+                        ※ 각 납입 기간의 만기 시점(납입 완료 시점)에 해약환급금 수익률 120%를 적용한 가정 시나리오입니다.<br>
+                        ※ 만기 이후 시점은 추가 수익률을 반영하여 계산합니다.
+                        </span>
+                        <br>
+                        <strong style="color: #ff6b6b;">⚠️ 주의사항:</strong><br>
+                        • 위 해약환급금률은 <strong>가정 시나리오</strong>이며, 실제 달러보험 상품에 따라 다를 수 있습니다.<br>
+                        • 실제 가입 시에는 보험사별 상품 조건을 확인하시기 바랍니다.<br>
+                        • 환율이 높을수록 달러 자산의 원화 환산 가치가 더 높아집니다.
+                    </div>
+                </div>
+                
+                <!-- 환율 추이 비교 섹션 -->
+                <div class="rate-history-section" style="margin-top: 40px; margin-bottom: 40px;">
+                    <h3>원달러 환율 추이: 과거 10년 vs 미래 10년</h3>
+                    <div class="rate-chart-container">
+                        <div class="rate-line-chart" id="rateLineChart">
+                            <div class="chart-grid" id="chartGrid"></div>
+                            <svg class="chart-lines" id="chartLines"></svg>
+                            <div class="chart-points" id="chartPoints"></div>
+                            <div class="chart-labels" id="chartLabels"></div>
+                            <div class="chart-y-axis" id="chartYAxis"></div>
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <div class="legend-color legend-color-past"></div>
+                                <span class="legend-text">과거 10년 (2015-2025) - 실제 환율</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color legend-color-future"></div>
+                                <span class="legend-text">미래 10년 (2025-2035) - 예상 환율</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comparison-summary" id="comparisonSummary">
+                        <!-- 동적으로 생성됨 -->
+                    </div>
+                    <div class="info-box" style="margin-top: 30px;">
+                        <strong>📊 분석 포인트:</strong><br>
+                        • <strong>과거 10년 (2015-2025)</strong>: 환율이 1,100원대에서 1,472원으로 약 33% 상승했습니다.<br>
+                        • <strong>미래 10년 (2025-2035)</strong>: 원화 약세 추세가 지속될 경우, 환율이 더 상승할 가능성이 있습니다.<br>
+                        • 환율이 상승할수록 달러 자산을 원화로 환산했을 때의 가치가 더 크게 증가합니다.<br>
+                        • 지난 10년간 환율 상승을 경험하지 못했다면, 앞으로 10년은 달러 자산 준비의 기회일 수 있습니다.
+                    </div>
+                    <div class="highlight-box" style="margin-top: 30px;">
+                        <strong>💡 핵심 메시지:</strong><br>
+                        지난 10년간 환율이 상승했다면, 앞으로 10년도 비슷한 추세가 이어질 수 있습니다.<br>
+                        지금 달러 자산을 준비하지 않으면, 10년 후 더 높은 환율에서 달러를 사야 할 수도 있습니다.<br>
+                        <strong>지금 준비하는 것과 나중에 준비하는 것의 차이는 수백만원, 수천만원이 될 수 있습니다.</strong>
+                    </div>
                 </div>
             </div>
             
@@ -818,7 +1148,7 @@
                     <h3>달러보험의 5가지 장점</h3>
                     <ul>
                         <li><strong>달러는 세계 기축통화</strong> - 어떤 상황에서도 가치가 보존됩니다. 미국 경제가 좋을 때도, 나쁠 때도 달러는 강세입니다.</li>
-                        <li><strong>미국 금리 5.0%</strong> - 한국 금리 3.25%보다 1.5%p 더 높아서 더 많은 수익을 얻을 수 있습니다.</li>
+                        <li><strong>미국 금리 3.75%</strong> - 한국 금리 2.50%보다 1.25%p 더 높아서 더 많은 수익을 얻을 수 있습니다.</li>
                         <li><strong>보험료 대비 높은 보장</strong> - 납입한 보험료보다 더 많은 보험금을 받을 수 있습니다.</li>
                         <li><strong>달러 코스트 에버리지</strong> - 긴 기간 동안 납입하면 평균 매입 환율을 낮출 수 있어서 더 유리합니다.</li>
                         <li><strong>1달러당 2원</strong> - 시중은행 대비 1/10 수준의 저렴한 환전 수수료입니다.</li>
@@ -980,6 +1310,539 @@
     </div>
     
     <script>
+        // ========== 가치 추이 비교 그래프 관련 함수 ==========
+        
+        // 현재 선택된 환율 시나리오
+        let currentFutureRate = 1700;
+        let currentPaymentYears = 7;
+        
+        // 해약환급금률 데이터
+        const surrenderRates = {
+            5: { maturity: 1.20, after10: 1.32 },  // 5년납: 만기 120%, 10년 후 132%
+            7: { maturity: 1.20, after10: 1.30 },  // 7년납: 만기 120%, 10년 후 130%
+            10: { maturity: 1.20, after10: 1.20 }  // 10년납: 만기 120%
+        };
+        
+        // 금리 및 환율 설정
+        const currentRate = 1472;  // 현재 환율
+        const krwRealRate = 0.005;  // 한국 실질 수익률 0.5%
+        const usdRealRate = 0.0175; // 미국 실질 수익률 1.75%
+        const inflation = 0.02;     // 인플레이션 2%
+        const initialAmount = 100000000; // 초기 투자금 1억원
+        
+        // 환율 시나리오 업데이트
+        function updateRate(rate, buttonElement) {
+            currentFutureRate = rate;
+            
+            // 버튼 활성화 상태 업데이트
+            document.querySelectorAll('.rate-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            buttonElement.classList.add('active');
+            
+            // 정보 업데이트
+            document.getElementById('rateInfo').innerHTML = `
+                <strong>현재 선택된 환율 시나리오: ${rate.toLocaleString()}원</strong><br>
+                <span style="color: #fff9e6; font-size: 0.95em;">환율이 높을수록 달러 자산의 원화 환산 가치가 더 크게 증가합니다.</span>
+            `;
+            document.getElementById('selectedRate').textContent = rate.toLocaleString() + '원';
+            
+            // 계산기 다시 실행
+            updateCalculator(currentPaymentYears, null);
+        }
+        
+        // 계산기 업데이트
+        function updateCalculator(paymentYears, buttonElement) {
+            currentPaymentYears = paymentYears;
+            
+            // 버튼 활성화 상태 업데이트
+            if (buttonElement) {
+                document.querySelectorAll('.payment-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                buttonElement.classList.add('active');
+            }
+            
+            document.getElementById('selectedPaymentYears').textContent = paymentYears + '년납';
+            
+            // 데이터 계산
+            const data = calculateValues(paymentYears, currentFutureRate);
+            
+            // 그래프 그리기
+            drawChart(data);
+            
+            // 표 업데이트
+            updateTable(data);
+        }
+        
+        // 가치 계산
+        function calculateValues(paymentYears, futureRate) {
+            const rates = surrenderRates[paymentYears];
+            const data = [];
+            
+            // 현재 시점
+            const currentKRW = initialAmount;
+            const currentUSD = initialAmount / currentRate;
+            data.push({
+                year: '현재',
+                krw: currentKRW,
+                usd: currentUSD,
+                usdInKRW: currentUSD * currentRate,
+                difference: 0
+            });
+            
+            // 5년 후
+            const after5KRW = initialAmount * Math.pow(1 + krwRealRate, 5);
+            let after5USD = currentUSD;
+            if (paymentYears <= 5) {
+                // 만기 도달
+                after5USD = currentUSD * rates.maturity;
+            } else {
+                // 만기 전
+                after5USD = currentUSD * Math.pow(1 + usdRealRate, 5);
+            }
+            const after5USDInKRW = after5USD * (currentRate + (futureRate - currentRate) * 0.5);
+            data.push({
+                year: '5년후',
+                krw: after5KRW,
+                usd: after5USD,
+                usdInKRW: after5USDInKRW,
+                difference: after5USDInKRW - after5KRW
+            });
+            
+            // 10년 후
+            const after10KRW = initialAmount * Math.pow(1 + krwRealRate, 10);
+            let after10USD = currentUSD;
+            if (paymentYears <= 10) {
+                // 만기 도달 또는 만기 후
+                if (paymentYears === 10) {
+                    after10USD = currentUSD * rates.maturity;
+                } else {
+                    after10USD = currentUSD * rates.after10;
+                }
+            } else {
+                after10USD = currentUSD * Math.pow(1 + usdRealRate, 10);
+            }
+            const after10USDInKRW = after10USD * futureRate;
+            data.push({
+                year: '10년후',
+                krw: after10KRW,
+                usd: after10USD,
+                usdInKRW: after10USDInKRW,
+                difference: after10USDInKRW - after10KRW
+            });
+            
+            // 만기 시점 데이터 추가 (7년납의 경우)
+            if (paymentYears === 7) {
+                const maturityKRW = initialAmount * Math.pow(1 + krwRealRate, 7);
+                const maturityUSD = currentUSD * rates.maturity;
+                const maturityUSDInKRW = maturityUSD * (currentRate + (futureRate - currentRate) * 0.7);
+                data.splice(2, 0, {
+                    year: '7년후(만기)',
+                    krw: maturityKRW,
+                    usd: maturityUSD,
+                    usdInKRW: maturityUSDInKRW,
+                    difference: maturityUSDInKRW - maturityKRW,
+                    isMaturity: true
+                });
+            } else if (paymentYears === 5) {
+                // 5년납 만기 시점
+                data[1].isMaturity = true;
+            } else if (paymentYears === 10) {
+                // 10년납 만기 시점
+                data[2].isMaturity = true;
+            }
+            
+            return data;
+        }
+        
+        // 그래프 그리기
+        function drawChart(data) {
+            const svg = document.getElementById('valueChartSvg');
+            const container = document.getElementById('valueChartContainer');
+            const width = container.clientWidth - 40;
+            const height = 350;
+            const margin = { top: 20, right: 20, bottom: 60, left: 80 };
+            const chartWidth = width - margin.left - margin.right;
+            const chartHeight = height - margin.top - margin.bottom;
+            
+            svg.setAttribute('width', width);
+            svg.setAttribute('height', height);
+            svg.innerHTML = '';
+            
+            // Y축 범위 계산
+            const allValues = [];
+            data.forEach(d => {
+                allValues.push(d.krw, d.usdInKRW);
+            });
+            const minValue = Math.min(...allValues) * 0.95;
+            const maxValue = Math.max(...allValues) * 1.05;
+            
+            // 좌표 변환 함수
+            const getX = (index) => margin.left + (index / (data.length - 1)) * chartWidth;
+            const getY = (value) => margin.top + chartHeight - ((value - minValue) / (maxValue - minValue)) * chartHeight;
+            
+            // 그리드 라인
+            for (let i = 0; i <= 4; i++) {
+                const y = margin.top + (chartHeight / 4) * i;
+                const value = maxValue - (maxValue - minValue) * (i / 4);
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', margin.left);
+                line.setAttribute('y1', y);
+                line.setAttribute('x2', width - margin.right);
+                line.setAttribute('y2', y);
+                line.setAttribute('stroke', '#444');
+                line.setAttribute('stroke-width', '1');
+                line.setAttribute('stroke-dasharray', '5,5');
+                svg.appendChild(line);
+                
+                // Y축 레이블
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttribute('x', margin.left - 10);
+                text.setAttribute('y', y + 5);
+                text.setAttribute('text-anchor', 'end');
+                text.setAttribute('fill', '#e8e8e8');
+                text.setAttribute('font-size', '12');
+                text.textContent = Math.round(value / 10000) + '만원';
+                svg.appendChild(text);
+            }
+            
+            // 현재 기준선 (노란색 점선)
+            const currentY = getY(data[0].krw);
+            const currentLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            currentLine.setAttribute('x1', margin.left);
+            currentLine.setAttribute('y1', currentY);
+            currentLine.setAttribute('x2', width - margin.right);
+            currentLine.setAttribute('y2', currentY);
+            currentLine.setAttribute('stroke', '#ffc107');
+            currentLine.setAttribute('stroke-width', '2');
+            currentLine.setAttribute('stroke-dasharray', '10,5');
+            svg.appendChild(currentLine);
+            
+            // 원화 라인
+            const krwPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            let krwPathData = '';
+            data.forEach((d, i) => {
+                const x = getX(i);
+                const y = getY(d.krw);
+                if (i === 0) {
+                    krwPathData = `M ${x} ${y}`;
+                } else {
+                    krwPathData += ` L ${x} ${y}`;
+                }
+            });
+            krwPath.setAttribute('d', krwPathData);
+            krwPath.setAttribute('fill', 'none');
+            krwPath.setAttribute('stroke', '#dc3545');
+            krwPath.setAttribute('stroke-width', '3');
+            svg.appendChild(krwPath);
+            
+            // 달러 라인
+            const usdPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            let usdPathData = '';
+            data.forEach((d, i) => {
+                const x = getX(i);
+                const y = getY(d.usdInKRW);
+                if (i === 0) {
+                    usdPathData = `M ${x} ${y}`;
+                } else {
+                    usdPathData += ` L ${x} ${y}`;
+                }
+            });
+            usdPath.setAttribute('d', usdPathData);
+            usdPath.setAttribute('fill', 'none');
+            usdPath.setAttribute('stroke', '#28a745');
+            usdPath.setAttribute('stroke-width', '3');
+            svg.appendChild(usdPath);
+            
+            // 데이터 포인트 및 레이블
+            const labelPositions = [];
+            data.forEach((d, i) => {
+                const x = getX(i);
+                const krwY = getY(d.krw);
+                const usdY = getY(d.usdInKRW);
+                
+                // 원화 포인트
+                const krwCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                krwCircle.setAttribute('cx', x);
+                krwCircle.setAttribute('cy', krwY);
+                krwCircle.setAttribute('r', '5');
+                krwCircle.setAttribute('fill', '#dc3545');
+                svg.appendChild(krwCircle);
+                
+                // 달러 포인트
+                const usdCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                usdCircle.setAttribute('cx', x);
+                usdCircle.setAttribute('cy', usdY);
+                usdCircle.setAttribute('r', '5');
+                usdCircle.setAttribute('fill', '#28a745');
+                svg.appendChild(usdCircle);
+                
+                // 레이블 (겹침 방지)
+                let labelOffset = 0;
+                labelPositions.forEach(pos => {
+                    if (Math.abs(pos - krwY) < 30) {
+                        labelOffset = pos < krwY ? -25 : 25;
+                    }
+                });
+                labelPositions.push(krwY + labelOffset);
+                
+                const krwText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                krwText.setAttribute('x', x);
+                krwText.setAttribute('y', krwY - 15 + labelOffset);
+                krwText.setAttribute('text-anchor', 'middle');
+                krwText.setAttribute('fill', '#dc3545');
+                krwText.setAttribute('font-size', '11');
+                krwText.setAttribute('font-weight', '600');
+                krwText.textContent = Math.round(d.krw / 10000) + '만';
+                svg.appendChild(krwText);
+                
+                const usdText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                usdText.setAttribute('x', x);
+                usdText.setAttribute('y', usdY + 20);
+                usdText.setAttribute('text-anchor', 'middle');
+                usdText.setAttribute('fill', '#28a745');
+                usdText.setAttribute('font-size', '11');
+                usdText.setAttribute('font-weight', '600');
+                usdText.textContent = Math.round(d.usdInKRW / 10000) + '만';
+                svg.appendChild(usdText);
+                
+                // 만기 시점 표시
+                if (d.isMaturity) {
+                    const maturityLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    maturityLine.setAttribute('x1', x);
+                    maturityLine.setAttribute('y1', margin.top);
+                    maturityLine.setAttribute('x2', x);
+                    maturityLine.setAttribute('y2', height - margin.bottom);
+                    maturityLine.setAttribute('stroke', '#17a2b8');
+                    maturityLine.setAttribute('stroke-width', '2');
+                    maturityLine.setAttribute('stroke-dasharray', '5,5');
+                    svg.insertBefore(maturityLine, svg.firstChild);
+                    
+                    // 차이 금액 표시
+                    const diffText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    diffText.setAttribute('x', x);
+                    diffText.setAttribute('y', margin.top - 5);
+                    diffText.setAttribute('text-anchor', 'middle');
+                    diffText.setAttribute('fill', '#17a2b8');
+                    diffText.setAttribute('font-size', '12');
+                    diffText.setAttribute('font-weight', '700');
+                    diffText.textContent = '차이: +' + Math.round(d.difference / 10000) + '만원';
+                    svg.appendChild(diffText);
+                }
+                
+                // X축 레이블
+                const xLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                xLabel.setAttribute('x', x);
+                xLabel.setAttribute('y', height - margin.bottom + 35);
+                xLabel.setAttribute('text-anchor', 'middle');
+                xLabel.setAttribute('fill', '#e8e8e8');
+                xLabel.setAttribute('font-size', '13');
+                xLabel.setAttribute('font-weight', '600');
+                xLabel.textContent = d.year;
+                svg.appendChild(xLabel);
+            });
+        }
+        
+        // 표 업데이트
+        function updateTable(data) {
+            const tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+            
+            data.forEach(d => {
+                const row = document.createElement('tr');
+                if (d.isMaturity) {
+                    row.style.background = 'rgba(23, 162, 184, 0.2)';
+                    row.style.fontWeight = '600';
+                }
+                
+                row.innerHTML = `
+                    <td>${d.year}</td>
+                    <td>${Math.round(d.krw).toLocaleString()}원</td>
+                    <td>${Math.round(d.usdInKRW).toLocaleString()}원</td>
+                    <td style="color: ${d.difference >= 0 ? '#28a745' : '#dc3545'}; font-weight: 600;">
+                        ${d.difference >= 0 ? '+' : ''}${Math.round(d.difference).toLocaleString()}원
+                        ${d.isMaturity ? '<br><span style="font-size: 0.9em; color: #17a2b8;">(만기 해약환급금 차이)</span>' : ''}
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+        
+        // ========== 환율 추이 비교 그래프 관련 함수 ==========
+        
+        // 환율 추이 그래프 그리기
+        function drawRateHistoryChart() {
+            // 과거 10년 환율 데이터 (2015-2025)
+            const pastRates = [
+                { year: '2015', rate: 1150 },
+                { year: '2020', rate: 1200 },
+                { year: '2025', rate: 1472 }
+            ];
+            
+            // 미래 10년 환율 예상 (2025-2035)
+            const futureRates = [
+                { year: '2025', rate: 1472 },
+                { year: '2030', rate: 1600 },
+                { year: '2035', rate: 1700 }
+            ];
+            
+            const container = document.getElementById('rateLineChart');
+            const width = container.clientWidth;
+            const height = 350;
+            const margin = { top: 30, right: 30, bottom: 60, left: 80 };
+            const chartWidth = width - margin.left - margin.right;
+            const chartHeight = height - margin.top - margin.bottom;
+            
+            // SVG 초기화
+            const svg = document.getElementById('chartLines');
+            svg.setAttribute('width', width);
+            svg.setAttribute('height', height);
+            svg.innerHTML = '';
+            
+            // Y축 범위
+            const allRates = [...pastRates.map(r => r.rate), ...futureRates.map(r => r.rate)];
+            const minRate = Math.min(...allRates) * 0.95;
+            const maxRate = Math.max(...allRates) * 1.05;
+            
+            // 좌표 변환
+            const getX = (index, total) => margin.left + (index / (total - 1)) * chartWidth;
+            const getY = (rate) => margin.top + chartHeight - ((rate - minRate) / (maxRate - minRate)) * chartHeight;
+            
+            // 그리드
+            for (let i = 0; i <= 5; i++) {
+                const y = margin.top + (chartHeight / 5) * i;
+                const rate = maxRate - (maxRate - minRate) * (i / 5);
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', margin.left);
+                line.setAttribute('y1', y);
+                line.setAttribute('x2', width - margin.right);
+                line.setAttribute('y2', y);
+                line.setAttribute('stroke', '#444');
+                line.setAttribute('stroke-width', '1');
+                line.setAttribute('stroke-dasharray', '3,3');
+                svg.appendChild(line);
+            }
+            
+            // 현재 기준선 (노란색 점선)
+            const currentY = getY(1472);
+            const currentLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            currentLine.setAttribute('x1', margin.left);
+            currentLine.setAttribute('y1', currentY);
+            currentLine.setAttribute('x2', width - margin.right);
+            currentLine.setAttribute('y2', currentY);
+            currentLine.setAttribute('stroke', '#ffc107');
+            currentLine.setAttribute('stroke-width', '3');
+            currentLine.setAttribute('stroke-dasharray', '10,5');
+            svg.appendChild(currentLine);
+            
+            // 과거 환율 라인
+            const pastPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            let pastPathData = '';
+            pastRates.forEach((r, i) => {
+                const x = getX(i, pastRates.length);
+                const y = getY(r.rate);
+                if (i === 0) {
+                    pastPathData = `M ${x} ${y}`;
+                } else {
+                    pastPathData += ` L ${x} ${y}`;
+                }
+            });
+            pastPath.setAttribute('d', pastPathData);
+            pastPath.setAttribute('fill', 'none');
+            pastPath.setAttribute('stroke', '#17a2b8');
+            pastPath.setAttribute('stroke-width', '3');
+            svg.appendChild(pastPath);
+            
+            // 미래 환율 라인
+            const futurePath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            let futurePathData = '';
+            futureRates.forEach((r, i) => {
+                const x = getX(i, futureRates.length);
+                const y = getY(r.rate);
+                if (i === 0) {
+                    futurePathData = `M ${x} ${y}`;
+                } else {
+                    futurePathData += ` L ${x} ${y}`;
+                }
+            });
+            futurePath.setAttribute('d', futurePathData);
+            futurePath.setAttribute('fill', 'none');
+            futurePath.setAttribute('stroke', '#ffc107');
+            futurePath.setAttribute('stroke-width', '3');
+            svg.appendChild(futurePath);
+            
+            // 데이터 포인트 및 레이블
+            [...pastRates, ...futureRates.slice(1)].forEach((r, i) => {
+                const isCurrent = r.rate === 1472;
+                const x = isCurrent ? getX(0, futureRates.length) : (i < pastRates.length ? getX(i, pastRates.length) : getX(i - pastRates.length + 1, futureRates.length));
+                const y = getY(r.rate);
+                
+                const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                circle.setAttribute('cx', x);
+                circle.setAttribute('cy', y);
+                circle.setAttribute('r', isCurrent ? '8' : '6');
+                circle.setAttribute('fill', isCurrent ? '#ffc107' : (i < pastRates.length ? '#17a2b8' : '#ffc107'));
+                circle.setAttribute('stroke', '#fff');
+                circle.setAttribute('stroke-width', '2');
+                svg.appendChild(circle);
+                
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttribute('x', x);
+                text.setAttribute('y', y - 15);
+                text.setAttribute('text-anchor', 'middle');
+                text.setAttribute('fill', isCurrent ? '#ffc107' : '#e8e8e8');
+                text.setAttribute('font-size', '12');
+                text.setAttribute('font-weight', '600');
+                text.textContent = r.rate.toLocaleString() + '원';
+                svg.appendChild(text);
+                
+                // X축 레이블
+                const xLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                xLabel.setAttribute('x', x);
+                xLabel.setAttribute('y', height - margin.bottom + 25);
+                xLabel.setAttribute('text-anchor', 'middle');
+                xLabel.setAttribute('fill', '#e8e8e8');
+                xLabel.setAttribute('font-size', '13');
+                xLabel.setAttribute('font-weight', '600');
+                xLabel.textContent = r.year === '2025' ? '현재' : (r.year === '2015' ? '10년전' : (r.year === '2020' ? '5년전' : (r.year === '2030' ? '5년후' : '10년후')));
+                svg.appendChild(xLabel);
+            });
+            
+            // Y축 레이블
+            for (let i = 0; i <= 5; i++) {
+                const y = margin.top + (chartHeight / 5) * i;
+                const rate = Math.round(maxRate - (maxRate - minRate) * (i / 5));
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttribute('x', margin.left - 10);
+                text.setAttribute('y', y + 5);
+                text.setAttribute('text-anchor', 'end');
+                text.setAttribute('fill', '#e8e8e8');
+                text.setAttribute('font-size', '12');
+                text.textContent = rate.toLocaleString() + '원';
+                svg.appendChild(text);
+            }
+            
+            // 요약 정보 업데이트
+            const summary = document.getElementById('comparisonSummary');
+            const pastChange = ((1472 - 1150) / 1150 * 100).toFixed(1);
+            const futureChange = ((1700 - 1472) / 1472 * 100).toFixed(1);
+            summary.innerHTML = `
+                <strong>📈 환율 변화 요약:</strong><br>
+                • 과거 10년 (2015→2025): 1,150원 → 1,472원 (<strong style="color: #17a2b8;">+${pastChange}% 상승</strong>)<br>
+                • 미래 10년 예상 (2025→2035): 1,472원 → 1,700원 (<strong style="color: #ffc107;">+${futureChange}% 상승 예상</strong>)<br>
+                • 총 20년간 예상 변화: 1,150원 → 1,700원 (<strong>+47.8% 상승</strong>)
+            `;
+        }
+        
+        // 페이지 로드 시 초기화
+        window.addEventListener('DOMContentLoaded', function() {
+            updateCalculator(7, null);
+            drawRateHistoryChart();
+        });
+        
+        // ========== 상담 신청 관련 함수 ==========
+        
         // 시간 슬롯 생성 (8:00 ~ 20:00, 30분 단위)
         function generateTimeSlots() {
             const slots = [];
