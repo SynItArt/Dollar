@@ -17,7 +17,7 @@
             color: #e8e8e8;
             background-color: #1a1a1a;
             padding: 0;
-            font-size: 18px;
+            font-size: 16px;
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
         }
@@ -795,61 +795,319 @@
         }
         
         @media (max-width: 900px) {
+            body {
+                font-size: 15px;
+            }
+            
             .container {
-                width: calc(100% - 24px);
+                width: calc(100% - 16px);
                 max-width: 100%;
             }
             
             .header {
-                padding: 48px 24px;
+                padding: 40px 20px;
             }
             
             .header h1 {
-                font-size: 2.2em;
+                font-size: 1.8em;
+                line-height: 1.3;
             }
             
             .header .subtitle {
-                font-size: 1.3em;
+                font-size: 1.1em;
             }
             
             .content {
-                padding: 32px 24px;
+                padding: 24px 16px;
+            }
+            
+            .intro {
+                padding: 30px 20px;
+                font-size: 1.2em;
+                line-height: 1.8;
+            }
+            
+            .section {
+                margin-bottom: 50px;
             }
             
             .section-title {
-                font-size: 2em;
+                font-size: 1.6em;
+                margin-bottom: 25px;
+                padding-bottom: 15px;
             }
             
             .section-content {
-                font-size: 1.1em;
-                line-height: 1.9;
+                font-size: 1em;
+                line-height: 1.8;
                 text-align: left;
             }
             
             .highlight-box,
             .warning-box,
             .info-box {
+                padding: 25px 20px;
+                font-size: 1em;
+                line-height: 1.8;
                 text-align: left;
+            }
+            
+            .target-section,
+            .worry-section {
+                padding: 25px 20px;
+            }
+            
+            .target-section h3,
+            .worry-section h3 {
+                font-size: 1.5em;
+            }
+            
+            .target-item,
+            .worry-item {
+                padding: 20px;
+            }
+            
+            .target-item h4,
+            .worry-item h4 {
+                font-size: 1.3em;
+            }
+            
+            .target-item p,
+            .worry-item p {
+                font-size: 1em;
+                line-height: 1.8;
             }
             
             .stat-box {
                 display: flex;
                 overflow-x: auto;
                 -webkit-overflow-scrolling: touch;
+                gap: 15px;
+                padding: 10px 0;
+            }
+            
+            .stat-item {
+                padding: 25px 20px;
+                min-width: 160px;
+            }
+            
+            .stat-item .number {
+                font-size: 2.5em;
+            }
+            
+            .stat-item .label {
+                font-size: 1em;
+            }
+            
+            .calculation-box {
+                padding: 20px;
+            }
+            
+            .calculation-box h4 {
+                font-size: 1.2em;
+            }
+            
+            .calculation-box .formula {
+                padding: 15px;
+                font-size: 0.95em;
+            }
+            
+            .benefit-list {
+                padding: 25px 20px;
+            }
+            
+            .benefit-list h3 {
+                font-size: 1.5em;
+            }
+            
+            .benefit-list li {
+                padding: 20px 0;
+                padding-left: 40px;
+                font-size: 1em;
+                line-height: 1.8;
+            }
+            
+            .calculator-section,
+            .rate-history-section {
+                padding: 25px 16px;
+            }
+            
+            .calculator-section h3,
+            .rate-history-section h3 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+            
+            .payment-options,
+            .rate-options {
+                gap: 10px;
+                margin: 15px 0;
+            }
+            
+            .payment-btn,
+            .rate-btn {
+                padding: 12px 20px;
+                font-size: 0.95em;
+            }
+            
+            .value-chart-container {
+                height: 300px;
+            }
+            
+            .rate-chart-container {
+                height: 300px;
+                padding: 15px;
+            }
+            
+            .comparison-table-calc {
+                font-size: 0.9em;
+                display: block;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .comparison-table-calc th,
+            .comparison-table-calc td {
+                padding: 12px 8px;
+                white-space: nowrap;
+            }
+            
+            .comparison-table-calc th {
+                font-size: 0.95em;
+            }
+            
+            .comparison-table-calc td {
+                font-size: 0.9em;
             }
             
             .modal-content {
-                margin: 20px;
-                padding: 30px 20px;
+                margin: 10px;
+                padding: 25px 20px;
+            }
+            
+            .modal-title {
+                font-size: 1.6em;
+            }
+            
+            .form-group label {
+                font-size: 1em;
+            }
+            
+            .form-group input,
+            .form-group select {
+                padding: 12px;
+                font-size: 1em;
             }
             
             .time-slots {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 8px;
             }
             
-            .consult-btn,
+            .time-slot {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+            
+            .consult-btn {
+                padding: 18px 30px;
+                font-size: 1.3em;
+            }
+            
             .submit-btn {
-                width: 100%;
+                padding: 18px;
+                font-size: 1.2em;
+            }
+            
+            .cta-section {
+                padding: 50px 30px;
+            }
+            
+            .cta-section h2 {
+                font-size: 2em;
+            }
+            
+            .cta-section p {
+                font-size: 1.2em;
+                line-height: 2;
+            }
+            
+            .metlife-section {
+                padding: 35px 25px;
+            }
+            
+            .metlife-section h3 {
+                font-size: 1.8em;
+            }
+            
+            .metlife-section p {
+                font-size: 1.1em;
+            }
+            
+            .big-number {
+                font-size: 3.5em;
+            }
+            
+            .footer {
+                padding: 30px 20px;
+                font-size: 1em;
+            }
+        }
+        
+        /* 매우 작은 화면 (480px 이하) */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+            
+            .header {
+                padding: 30px 15px;
+            }
+            
+            .header h1 {
+                font-size: 1.5em;
+            }
+            
+            .header .subtitle {
+                font-size: 1em;
+            }
+            
+            .content {
+                padding: 20px 12px;
+            }
+            
+            .section-title {
+                font-size: 1.4em;
+            }
+            
+            .section-content {
+                font-size: 0.95em;
+            }
+            
+            .stat-item {
+                min-width: 140px;
+                padding: 20px 15px;
+            }
+            
+            .stat-item .number {
+                font-size: 2em;
+            }
+            
+            .value-chart-container {
+                height: 250px;
+            }
+            
+            .rate-chart-container {
+                height: 250px;
+            }
+            
+            .comparison-table-calc {
+                font-size: 0.85em;
+            }
+            
+            .comparison-table-calc th,
+            .comparison-table-calc td {
+                padding: 10px 6px;
             }
         }
     </style>
@@ -1460,9 +1718,15 @@
         function drawChart(data) {
             const svg = document.getElementById('valueChartSvg');
             const container = document.getElementById('valueChartContainer');
-            const width = container.clientWidth - 40;
-            const height = 350;
-            const margin = { top: 20, right: 20, bottom: 60, left: 80 };
+            const isMobile = window.innerWidth <= 900;
+            const width = container.clientWidth - (isMobile ? 20 : 40);
+            const height = isMobile ? 300 : 350;
+            const margin = { 
+                top: isMobile ? 30 : 20, 
+                right: isMobile ? 15 : 20, 
+                bottom: isMobile ? 70 : 60, 
+                left: isMobile ? 60 : 80 
+            };
             const chartWidth = width - margin.left - margin.right;
             const chartHeight = height - margin.top - margin.bottom;
             
@@ -1502,7 +1766,7 @@
                 text.setAttribute('y', y + 5);
                 text.setAttribute('text-anchor', 'end');
                 text.setAttribute('fill', '#e8e8e8');
-                text.setAttribute('font-size', '12');
+                text.setAttribute('font-size', isMobile ? '11' : '12');
                 text.textContent = Math.round(value / 10000) + '만원';
                 svg.appendChild(text);
             }
@@ -1604,11 +1868,11 @@
                 
                 // 원화 레이블 배경 (가독성 향상)
                 const krwBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-                const krwTextWidth = (Math.round(d.krw / 10000) + '만').length * 8;
-                krwBg.setAttribute('x', x - krwTextWidth / 2 - 4);
-                krwBg.setAttribute('y', krwLabelY - 12);
-                krwBg.setAttribute('width', krwTextWidth + 8);
-                krwBg.setAttribute('height', '16');
+                const krwTextWidth = (Math.round(d.krw / 10000) + '만').length * (isMobile ? 9 : 8);
+                krwBg.setAttribute('x', x - krwTextWidth / 2 - (isMobile ? 5 : 4));
+                krwBg.setAttribute('y', krwLabelY - (isMobile ? 13 : 12));
+                krwBg.setAttribute('width', krwTextWidth + (isMobile ? 10 : 8));
+                krwBg.setAttribute('height', isMobile ? '18' : '16');
                 krwBg.setAttribute('fill', '#dc3545');
                 krwBg.setAttribute('fill-opacity', '0.9');
                 krwBg.setAttribute('rx', '4');
@@ -1620,7 +1884,7 @@
                 krwText.setAttribute('y', krwLabelY);
                 krwText.setAttribute('text-anchor', 'middle');
                 krwText.setAttribute('fill', '#ffffff');
-                krwText.setAttribute('font-size', '12');
+                krwText.setAttribute('font-size', isMobile ? '13' : '12');
                 krwText.setAttribute('font-weight', '700');
                 krwText.textContent = Math.round(d.krw / 10000) + '만';
                 svg.appendChild(krwText);
@@ -1651,11 +1915,11 @@
                 
                 // 달러 레이블 배경 (가독성 향상)
                 const usdBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-                const usdTextWidth = (Math.round(d.usdInKRW / 10000) + '만').length * 8;
-                usdBg.setAttribute('x', x - usdTextWidth / 2 - 4);
-                usdBg.setAttribute('y', usdLabelY - 12);
-                usdBg.setAttribute('width', usdTextWidth + 8);
-                usdBg.setAttribute('height', '16');
+                const usdTextWidth = (Math.round(d.usdInKRW / 10000) + '만').length * (isMobile ? 9 : 8);
+                usdBg.setAttribute('x', x - usdTextWidth / 2 - (isMobile ? 5 : 4));
+                usdBg.setAttribute('y', usdLabelY - (isMobile ? 13 : 12));
+                usdBg.setAttribute('width', usdTextWidth + (isMobile ? 10 : 8));
+                usdBg.setAttribute('height', isMobile ? '18' : '16');
                 usdBg.setAttribute('fill', '#28a745');
                 usdBg.setAttribute('fill-opacity', '0.9');
                 usdBg.setAttribute('rx', '4');
@@ -1667,7 +1931,7 @@
                 usdText.setAttribute('y', usdLabelY);
                 usdText.setAttribute('text-anchor', 'middle');
                 usdText.setAttribute('fill', '#ffffff');
-                usdText.setAttribute('font-size', '12');
+                usdText.setAttribute('font-size', isMobile ? '13' : '12');
                 usdText.setAttribute('font-weight', '700');
                 usdText.textContent = Math.round(d.usdInKRW / 10000) + '만';
                 svg.appendChild(usdText);
@@ -1685,24 +1949,36 @@
                     svg.insertBefore(maturityLine, svg.firstChild);
                     
                     // 차이 금액 표시
+                    const diffBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                    const diffTextContent = '차이: +' + Math.round(d.difference / 10000) + '만원';
+                    const diffTextWidth = diffTextContent.length * (isMobile ? 9 : 8);
+                    diffBg.setAttribute('x', x - diffTextWidth / 2 - (isMobile ? 5 : 4));
+                    diffBg.setAttribute('y', margin.top - (isMobile ? 20 : 18));
+                    diffBg.setAttribute('width', diffTextWidth + (isMobile ? 10 : 8));
+                    diffBg.setAttribute('height', isMobile ? '18' : '16');
+                    diffBg.setAttribute('fill', '#17a2b8');
+                    diffBg.setAttribute('fill-opacity', '0.9');
+                    diffBg.setAttribute('rx', '4');
+                    svg.appendChild(diffBg);
+                    
                     const diffText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                     diffText.setAttribute('x', x);
-                    diffText.setAttribute('y', margin.top - 5);
+                    diffText.setAttribute('y', margin.top - (isMobile ? 6 : 5));
                     diffText.setAttribute('text-anchor', 'middle');
-                    diffText.setAttribute('fill', '#17a2b8');
-                    diffText.setAttribute('font-size', '12');
+                    diffText.setAttribute('fill', '#ffffff');
+                    diffText.setAttribute('font-size', isMobile ? '11' : '12');
                     diffText.setAttribute('font-weight', '700');
-                    diffText.textContent = '차이: +' + Math.round(d.difference / 10000) + '만원';
+                    diffText.textContent = diffTextContent;
                     svg.appendChild(diffText);
                 }
                 
                 // X축 레이블
                 const xLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 xLabel.setAttribute('x', x);
-                xLabel.setAttribute('y', height - margin.bottom + 35);
+                xLabel.setAttribute('y', height - margin.bottom + (isMobile ? 30 : 35));
                 xLabel.setAttribute('text-anchor', 'middle');
                 xLabel.setAttribute('fill', '#e8e8e8');
-                xLabel.setAttribute('font-size', '13');
+                xLabel.setAttribute('font-size', isMobile ? '12' : '13');
                 xLabel.setAttribute('font-weight', '600');
                 xLabel.textContent = d.year;
                 svg.appendChild(xLabel);
@@ -1753,9 +2029,15 @@
             ];
             
             const container = document.getElementById('rateLineChart');
+            const isMobile = window.innerWidth <= 900;
             const width = container.clientWidth;
-            const height = 350;
-            const margin = { top: 30, right: 30, bottom: 60, left: 80 };
+            const height = isMobile ? 300 : 350;
+            const margin = { 
+                top: isMobile ? 35 : 30, 
+                right: isMobile ? 20 : 30, 
+                bottom: isMobile ? 70 : 60, 
+                left: isMobile ? 60 : 80 
+            };
             const chartWidth = width - margin.left - margin.right;
             const chartHeight = height - margin.top - margin.bottom;
             
@@ -1852,23 +2134,36 @@
                 circle.setAttribute('stroke-width', '2');
                 svg.appendChild(circle);
                 
+                // 레이블 배경 추가 (가독성 향상)
+                const labelBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                const labelText = r.rate.toLocaleString() + '원';
+                const labelWidth = labelText.length * (isMobile ? 9 : 8);
+                labelBg.setAttribute('x', x - labelWidth / 2 - (isMobile ? 5 : 4));
+                labelBg.setAttribute('y', y - (isMobile ? 20 : 18));
+                labelBg.setAttribute('width', labelWidth + (isMobile ? 10 : 8));
+                labelBg.setAttribute('height', isMobile ? '18' : '16');
+                labelBg.setAttribute('fill', isCurrent ? '#ffc107' : (i < pastRates.length ? '#17a2b8' : '#ffc107'));
+                labelBg.setAttribute('fill-opacity', '0.9');
+                labelBg.setAttribute('rx', '4');
+                svg.appendChild(labelBg);
+                
                 const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 text.setAttribute('x', x);
-                text.setAttribute('y', y - 15);
+                text.setAttribute('y', y - (isMobile ? 6 : 5));
                 text.setAttribute('text-anchor', 'middle');
-                text.setAttribute('fill', isCurrent ? '#ffc107' : '#e8e8e8');
-                text.setAttribute('font-size', '12');
-                text.setAttribute('font-weight', '600');
-                text.textContent = r.rate.toLocaleString() + '원';
+                text.setAttribute('fill', '#ffffff');
+                text.setAttribute('font-size', isMobile ? '12' : '12');
+                text.setAttribute('font-weight', '700');
+                text.textContent = labelText;
                 svg.appendChild(text);
                 
                 // X축 레이블
                 const xLabel = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 xLabel.setAttribute('x', x);
-                xLabel.setAttribute('y', height - margin.bottom + 25);
+                xLabel.setAttribute('y', height - margin.bottom + (isMobile ? 20 : 25));
                 xLabel.setAttribute('text-anchor', 'middle');
                 xLabel.setAttribute('fill', '#e8e8e8');
-                xLabel.setAttribute('font-size', '13');
+                xLabel.setAttribute('font-size', isMobile ? '12' : '13');
                 xLabel.setAttribute('font-weight', '600');
                 xLabel.textContent = r.year === '2025' ? '현재' : (r.year === '2015' ? '10년전' : (r.year === '2020' ? '5년전' : (r.year === '2030' ? '5년후' : '10년후')));
                 svg.appendChild(xLabel);
@@ -1883,7 +2178,7 @@
                 text.setAttribute('y', y + 5);
                 text.setAttribute('text-anchor', 'end');
                 text.setAttribute('fill', '#e8e8e8');
-                text.setAttribute('font-size', '12');
+                text.setAttribute('font-size', isMobile ? '11' : '12');
                 text.textContent = rate.toLocaleString() + '원';
                 svg.appendChild(text);
             }
