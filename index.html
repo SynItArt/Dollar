@@ -1767,7 +1767,8 @@
                 text.setAttribute('text-anchor', 'end');
                 text.setAttribute('fill', '#e8e8e8');
                 text.setAttribute('font-size', isMobile ? '11' : '12');
-                text.textContent = Math.round(value / 10000) + '만원';
+                const valueInMan = Math.round(value / 10000);
+                text.textContent = valueInMan.toLocaleString() + '만원';
                 svg.appendChild(text);
             }
             
@@ -1867,8 +1868,10 @@
                 krwLabelPositions.push(krwLabelY);
                 
                 // 원화 레이블 배경 (가독성 향상)
+                const krwValueInMan = Math.round(d.krw / 10000);
+                const krwTextContent = krwValueInMan.toLocaleString() + '만';
+                const krwTextWidth = krwTextContent.length * (isMobile ? 9 : 8);
                 const krwBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-                const krwTextWidth = (Math.round(d.krw / 10000) + '만').length * (isMobile ? 9 : 8);
                 krwBg.setAttribute('x', x - krwTextWidth / 2 - (isMobile ? 5 : 4));
                 krwBg.setAttribute('y', krwLabelY - (isMobile ? 13 : 12));
                 krwBg.setAttribute('width', krwTextWidth + (isMobile ? 10 : 8));
@@ -1886,7 +1889,7 @@
                 krwText.setAttribute('fill', '#ffffff');
                 krwText.setAttribute('font-size', isMobile ? '13' : '12');
                 krwText.setAttribute('font-weight', '700');
-                krwText.textContent = Math.round(d.krw / 10000) + '만';
+                krwText.textContent = krwTextContent;
                 svg.appendChild(krwText);
                 
                 // 달러 레이블 위치 계산 (아래쪽 배치, 겹침 방지)
@@ -1914,8 +1917,10 @@
                 usdLabelPositions.push(usdLabelY);
                 
                 // 달러 레이블 배경 (가독성 향상)
+                const usdValueInMan = Math.round(d.usdInKRW / 10000);
+                const usdTextContent = usdValueInMan.toLocaleString() + '만';
+                const usdTextWidth = usdTextContent.length * (isMobile ? 9 : 8);
                 const usdBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-                const usdTextWidth = (Math.round(d.usdInKRW / 10000) + '만').length * (isMobile ? 9 : 8);
                 usdBg.setAttribute('x', x - usdTextWidth / 2 - (isMobile ? 5 : 4));
                 usdBg.setAttribute('y', usdLabelY - (isMobile ? 13 : 12));
                 usdBg.setAttribute('width', usdTextWidth + (isMobile ? 10 : 8));
@@ -1933,7 +1938,7 @@
                 usdText.setAttribute('fill', '#ffffff');
                 usdText.setAttribute('font-size', isMobile ? '13' : '12');
                 usdText.setAttribute('font-weight', '700');
-                usdText.textContent = Math.round(d.usdInKRW / 10000) + '만';
+                usdText.textContent = usdTextContent;
                 svg.appendChild(usdText);
                 
                 // 만기 시점 표시
@@ -1949,8 +1954,8 @@
                     svg.insertBefore(maturityLine, svg.firstChild);
                     
                     // 차이 금액 표시
-                    const diffBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-                    const diffTextContent = '차이: +' + Math.round(d.difference / 10000) + '만원';
+                    const diffValueInMan = Math.round(d.difference / 10000);
+                    const diffTextContent = '차이: +' + diffValueInMan.toLocaleString() + '만원';
                     const diffTextWidth = diffTextContent.length * (isMobile ? 9 : 8);
                     diffBg.setAttribute('x', x - diffTextWidth / 2 - (isMobile ? 5 : 4));
                     diffBg.setAttribute('y', margin.top - (isMobile ? 20 : 18));
