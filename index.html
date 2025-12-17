@@ -1555,8 +1555,10 @@
             usdPath.setAttribute('stroke-width', '3');
             svg.appendChild(usdPath);
             
-            // 데이터 포인트 및 레이블
-            const labelPositions = [];
+            // 데이터 포인트 및 레이블 (겹침 방지 개선)
+            const krwLabelPositions = [];
+            const usdLabelPositions = [];
+            
             data.forEach((d, i) => {
                 const x = getX(i);
                 const krwY = getY(d.krw);
@@ -1566,44 +1568,107 @@
                 const krwCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
                 krwCircle.setAttribute('cx', x);
                 krwCircle.setAttribute('cy', krwY);
-                krwCircle.setAttribute('r', '5');
+                krwCircle.setAttribute('r', '6');
                 krwCircle.setAttribute('fill', '#dc3545');
+                krwCircle.setAttribute('stroke', '#fff');
+                krwCircle.setAttribute('stroke-width', '2');
                 svg.appendChild(krwCircle);
                 
                 // 달러 포인트
                 const usdCircle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
                 usdCircle.setAttribute('cx', x);
                 usdCircle.setAttribute('cy', usdY);
-                usdCircle.setAttribute('r', '5');
+                usdCircle.setAttribute('r', '6');
                 usdCircle.setAttribute('fill', '#28a745');
+                usdCircle.setAttribute('stroke', '#fff');
+                usdCircle.setAttribute('stroke-width', '2');
                 svg.appendChild(usdCircle);
                 
-                // 레이블 (겹침 방지)
-                let labelOffset = 0;
-                labelPositions.forEach(pos => {
-                    if (Math.abs(pos - krwY) < 30) {
-                        labelOffset = pos < krwY ? -25 : 25;
-                    }
-                });
-                labelPositions.push(krwY + labelOffset);
+                // 원화 레이블 위치 계산 (위쪽 배치, 겹침 방지)
+                let krwLabelY = krwY - 20;
+                let krwOffset = 0;
+                let attempts = 0;
+                while (attempts < 10) {
+                    let hasConflict = false;
+                    krwLabelPositions.forEach(pos => {
+                        if (Math.abs(pos - krwLabelY) < 25) {
+                            hasConflict = true;
+                        }
+                    });
+                    if (!hasConflict) break;
+                    krwOffset -= 25;
+                    krwLabelY = krwY - 20 + krwOffset;
+                    attempts++;
+                }
+                krwLabelPositions.push(krwLabelY);
                 
+                // 원화 레이블 배경 (가독성 향상)
+                const krwBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                const krwTextWidth = (Math.round(d.krw / 10000) + '만').length * 8;
+                krwBg.setAttribute('x', x - krwTextWidth / 2 - 4);
+                krwBg.setAttribute('y', krwLabelY - 12);
+                krwBg.setAttribute('width', krwTextWidth + 8);
+                krwBg.setAttribute('height', '16');
+                krwBg.setAttribute('fill', '#dc3545');
+                krwBg.setAttribute('fill-opacity', '0.9');
+                krwBg.setAttribute('rx', '4');
+                svg.appendChild(krwBg);
+                
+                // 원화 레이블 텍스트
                 const krwText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 krwText.setAttribute('x', x);
-                krwText.setAttribute('y', krwY - 15 + labelOffset);
+                krwText.setAttribute('y', krwLabelY);
                 krwText.setAttribute('text-anchor', 'middle');
-                krwText.setAttribute('fill', '#dc3545');
-                krwText.setAttribute('font-size', '11');
-                krwText.setAttribute('font-weight', '600');
+                krwText.setAttribute('fill', '#ffffff');
+                krwText.setAttribute('font-size', '12');
+                krwText.setAttribute('font-weight', '700');
                 krwText.textContent = Math.round(d.krw / 10000) + '만';
                 svg.appendChild(krwText);
                 
+                // 달러 레이블 위치 계산 (아래쪽 배치, 겹침 방지)
+                let usdLabelY = usdY + 25;
+                let usdOffset = 0;
+                attempts = 0;
+                while (attempts < 10) {
+                    let hasConflict = false;
+                    usdLabelPositions.forEach(pos => {
+                        if (Math.abs(pos - usdLabelY) < 25) {
+                            hasConflict = true;
+                        }
+                    });
+                    // 원화 레이블과도 겹치지 않도록 확인
+                    krwLabelPositions.forEach(pos => {
+                        if (Math.abs(pos - usdLabelY) < 25) {
+                            hasConflict = true;
+                        }
+                    });
+                    if (!hasConflict) break;
+                    usdOffset += 25;
+                    usdLabelY = usdY + 25 + usdOffset;
+                    attempts++;
+                }
+                usdLabelPositions.push(usdLabelY);
+                
+                // 달러 레이블 배경 (가독성 향상)
+                const usdBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                const usdTextWidth = (Math.round(d.usdInKRW / 10000) + '만').length * 8;
+                usdBg.setAttribute('x', x - usdTextWidth / 2 - 4);
+                usdBg.setAttribute('y', usdLabelY - 12);
+                usdBg.setAttribute('width', usdTextWidth + 8);
+                usdBg.setAttribute('height', '16');
+                usdBg.setAttribute('fill', '#28a745');
+                usdBg.setAttribute('fill-opacity', '0.9');
+                usdBg.setAttribute('rx', '4');
+                svg.appendChild(usdBg);
+                
+                // 달러 레이블 텍스트
                 const usdText = document.createElementNS('http://www.w3.org/2000/svg', 'text');
                 usdText.setAttribute('x', x);
-                usdText.setAttribute('y', usdY + 20);
+                usdText.setAttribute('y', usdLabelY);
                 usdText.setAttribute('text-anchor', 'middle');
-                usdText.setAttribute('fill', '#28a745');
-                usdText.setAttribute('font-size', '11');
-                usdText.setAttribute('font-weight', '600');
+                usdText.setAttribute('fill', '#ffffff');
+                usdText.setAttribute('font-size', '12');
+                usdText.setAttribute('font-weight', '700');
                 usdText.textContent = Math.round(d.usdInKRW / 10000) + '만';
                 svg.appendChild(usdText);
                 
