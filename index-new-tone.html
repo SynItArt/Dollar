@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달러보험, 지금은 '상품'보다 '같이 고민해 줄 사람'이 먼저입니다</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', sans-serif;
+            line-height: 2;
+            color: #e8e8e8;
+            background-color: #1a1a1a;
+            padding: 0;
+            font-size: 18px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .container {
+            width: calc(100% - 20px);
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #2d2d2d;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 50px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.4;
+        }
+        
+        .header .subtitle {
+            font-size: 1.4em;
+            opacity: 0.95;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        .content {
+            padding: 60px 60px;
+        }
+        
+        .intro {
+            font-size: 1.3em;
+            color: #ffffff;
+            font-weight: 400;
+            margin-bottom: 60px;
+            text-align: center;
+            padding: 45px 50px;
+            background: linear-gradient(135deg, #3a3a3a 0%, #4a4a4a 100%);
+            border-radius: 15px;
+            line-height: 2.2;
+            border-left: 5px solid #667eea;
+        }
+        
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-title {
+            font-size: 2.2em;
+            color: #ffffff;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            font-weight: 600;
+        }
+        
+        .section-content {
+            font-size: 1.2em;
+            line-height: 2.2;
+            margin-bottom: 35px;
+            color: #e8e8e8;
+            text-align: justify;
+            word-spacing: 0.1em;
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #2a3a4a 0%, #3a4a5a 100%);
+            border-left: 5px solid #667eea;
+            padding: 35px 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            font-size: 1.2em;
+            line-height: 2.2;
+            color: #e8e8e8;
+            font-style: italic;
+            text-align: justify;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #4a3a00 0%, #6b5a00 100%);
+            border-left: 5px solid #ffc107;
+            padding: 35px 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            font-size: 1.2em;
+            line-height: 2.2;
+            color: #fff9e6;
+            font-weight: 400;
+            text-align: justify;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #1a3a4a 0%, #2a5a6a 100%);
+            border-left: 5px solid #17a2b8;
+            padding: 35px 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            font-size: 1.2em;
+            line-height: 2.2;
+            color: #e6f7ff;
+            font-weight: 400;
+            text-align: justify;
+        }
+        
+        .target-section {
+            background: linear-gradient(135deg, #2a4a2a 0%, #3a6a3a 100%);
+            border: 3px solid #28a745;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+        }
+        
+        .target-section h3 {
+            color: #90ee90;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .target-item {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 25px 0;
+            border-left: 5px solid #28a745;
+        }
+        
+        .target-item h4 {
+            color: #90ee90;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .target-item p {
+            color: #e8e8e8;
+            font-size: 1.15em;
+            line-height: 2.1;
+            text-align: justify;
+        }
+        
+        .promise-section {
+            background: linear-gradient(135deg, #3a2a4a 0%, #4a3a5a 100%);
+            border: 3px solid #667eea;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 50px 0;
+        }
+        
+        .promise-section h3 {
+            color: #b8a5ff;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .promise-item {
+            background-color: #1a1a1a;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .promise-item h4 {
+            color: #b8a5ff;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .promise-item p {
+            color: #e8e8e8;
+            font-size: 1.15em;
+            line-height: 2.1;
+            text-align: justify;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 70px 50px;
+            text-align: center;
+            margin: 80px 0 0 0;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .cta-section p {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            line-height: 2.3;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .footer {
+            background-color: #1a1a1a;
+            color: #b0b0b0;
+            padding: 40px 50px;
+            text-align: center;
+            font-size: 1.1em;
+            border-top: 2px solid #444;
+        }
+        
+        .consult-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            font-size: 1.4em;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.5);
+            transition: all 0.3s ease;
+            margin: 30px 0;
+        }
+        
+        .consult-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.7);
+        }
+        
+        .consult-btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-subtitle {
+            font-size: 1.1em;
+            color: #b0b0b0;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+        
+        .faq-section {
+            background-color: #1a1a1a;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            border: 2px solid #444;
+        }
+        
+        .faq-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #444;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .faq-item h4 {
+            color: #667eea;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .faq-item p {
+            color: #e8e8e8;
+            font-size: 1.15em;
+            line-height: 2.1;
+            text-align: justify;
+        }
+        
+        .stat-box {
+            display: flex;
+            gap: 25px;
+            margin: 50px 0;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 10px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #667eea #1a1a1a;
+        }
+        
+        .stat-box::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .stat-box::-webkit-scrollbar-track {
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+        
+        .stat-box::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+        
+        .stat-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 35px 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.5);
+            min-width: 200px;
+            flex-shrink: 0;
+        }
+        
+        .stat-item .number {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin: 15px 0;
+        }
+        
+        .stat-item .label {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+        
+        .calculation-box {
+            background-color: #1a1a1a;
+            border: 2px solid #444;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .calculation-box h4 {
+            color: #ffc107;
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .calculation-box .formula {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #ffc107;
+        }
+        
+        .calculation-box .formula strong {
+            color: #ffc107;
+            font-size: 1.1em;
+        }
+        
+        .calculation-box .formula .result {
+            color: #90ee90;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .metlife-section {
+            background: linear-gradient(135deg, #4a3a00 0%, #6b5a00 100%);
+            border: 4px solid #ffc107;
+            padding: 50px;
+            border-radius: 20px;
+            margin: 60px 0;
+        }
+        
+        .metlife-section h3 {
+            color: #fff9e6;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-align: center;
+        }
+        
+        .metlife-section p {
+            font-size: 1.3em;
+            color: #fff9e6;
+            line-height: 2.3;
+            margin: 20px 0;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .big-number {
+            font-size: 5em;
+            font-weight: 700;
+            color: #ffc107;
+            display: block;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 900px) {
+            .container {
+                width: calc(100% - 24px);
+                max-width: 100%;
+            }
+            
+            .header {
+                padding: 48px 24px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .header .subtitle {
+                font-size: 1.2em;
+            }
+            
+            .content {
+                padding: 32px 24px;
+            }
+            
+            .section-title {
+                font-size: 1.8em;
+            }
+            
+            .section-content {
+                font-size: 1.1em;
+                line-height: 1.9;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <div class="header">
+            <h1>달러보험, 지금은 '상품'보다<br>'같이 고민해 줄 사람'이 먼저입니다</h1>
+            <p class="subtitle">물가와 환율이 어디까지 오를지 모르는 시대,<br>당장 결론부터 내리기보다<br>우선, 우리의 10년을 함께 그려보는 시간부터 시작합니다.</p>
+        </div>
+        
+        <div class="content">
+            <!-- 섹션 1: 지금, 우리가 서 있는 자리 -->
+            <div class="section">
+                <h2 class="section-title">지금, 우리는 어떤 시기를 살고 있을까요?</h2>
+                
+                <div class="section-content">
+                    월급은 그대로인데 장보러 갈 때마다 한숨이 늘어나고,<br>
+                    집값·전세값·교육비는 여전히 부담스럽습니다.
+                </div>
+                
+                <div class="quote-box">
+                    "이 돈을 그냥 원화로만 들고 있어도 괜찮을까?"<br>
+                    "10년 뒤, 지금과 같은 생활을 유지할 수 있을까?"
+                </div>
+                
+                <div class="section-content">
+                    한국은행은 매년 2%의 인플레이션을 목표로 하고 있습니다.<br>
+                    이게 무슨 의미인지, 숫자로 보면 이렇습니다.
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-item">
+                        <div class="label">지금</div>
+                        <div class="number">100%</div>
+                        <div class="label">자산 가치</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">10년 후</div>
+                        <div class="number">82%</div>
+                        <div class="label">실질 가치</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">20년 후</div>
+                        <div class="number">67%</div>
+                        <div class="label">실질 가치</div>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>지금 1억원을 가지고 있다면, 10년 후에는 실질 구매력이 8,200만원 수준으로 떨어집니다.</strong><br>
+                    인플레이션 2%가 10년간 누적되면, 100만원 × (1 - 0.02)^10 = 약 82만원이 됩니다.<br>
+                    하루하루 버티느라 바빠서 정작 '미래'는 나중으로 미뤄두기 쉽지만,<br>
+                    이 숫자는 우리가 피할 수 없는 현실입니다.
+                </div>
+                
+                <div class="info-box">
+                    그래서 이 페이지에서는 달러보험을 바로 권하기보다,<br>
+                    <strong>미래의 나를 지키기 위한 선택지 중 하나로</strong><br>
+                    차분히 함께 살펴보려고 합니다.
+                </div>
+            </div>
+            
+            <!-- 섹션 2: 왜 '달러'까지 생각해야 할까 -->
+            <div class="section">
+                <h2 class="section-title">원화만 바라보기엔, 세상이 너무 빨리 바뀌고 있습니다</h2>
+                
+                <div class="section-content">
+                    우리가 월급을 받는 통화는 원화지만,<br>
+                    우리가 살아갈 세상의 기준은 점점 달러에 맞춰지고 있습니다.
+                </div>
+                
+                <div class="info-box">
+                    <strong>한국 기준금리는 3.25%이고 인플레이션은 2~3%입니다.</strong><br>
+                    실질 수익률은 0.25~1.25%에 불과합니다.<br>
+                    반면 <strong>미국 기준금리는 5.0%</strong>로 한국보다 1.5%p 더 높습니다.
+                </div>
+                
+                <div class="calculation-box">
+                    <h4>📊 계산 근거</h4>
+                    <div class="formula">
+                        <strong>한국 실질 수익률 계산:</strong><br>
+                        한국 기준금리 3.25% - 인플레이션 2% = <span class="result">1.25%</span><br>
+                        한국 기준금리 3.25% - 인플레이션 3% = <span class="result">0.25%</span><br><br>
+                        <strong>한미 금리 차이:</strong><br>
+                        미국 기준금리 5.0% - 한국 기준금리 3.25% = <span class="result">1.75%p (약 1.5%p)</span>
+                    </div>
+                </div>
+                
+                <div class="section-content">
+                    • 인플레이션으로 같은 돈으로 살 수 있는 것들이 줄어들고,<br>
+                    • 글로벌 자산 가격은 대부분 '달러'를 기준으로 움직이고,<br>
+                    • 해외 투자·유학·노후 이주 같은 선택지는 점점 더 현실적인 고민이 됐습니다.
+                </div>
+                
+                <div class="highlight-box">
+                    그래서 <strong>달러 자산을 얼마나, 어떤 방식으로 보유할지</strong>는<br>
+                    더 이상 특정 계층만의 고민이 아니라<br>
+                    보통 직장인·자영업자·프리랜서에게도<br>
+                    필수가 되어가고 있습니다.
+                </div>
+            </div>
+            
+            <!-- 섹션 3: 달러보험, 거창한 금융상품이 아니라 -->
+            <div class="section">
+                <h2 class="section-title">보험 이야기가 아니라, '달러로 적금 드는 또 다른 방법'이라고 생각해 보세요</h2>
+                
+                <div class="section-content">
+                    '보험'이라는 단어를 들으면<br>
+                    왠지 부담스럽고, 당장 거절부터 하고 싶어질 수 있습니다.
+                </div>
+                
+                <div class="section-content">
+                    하지만 이 페이지에서 말하는 달러보험은
+                </div>
+                
+                <div class="info-box">
+                    1. 매달 일정 금액을 <strong>달러로 장기 적금</strong>처럼 쌓아가면서<br>
+                    2. <strong>환율과 물가 상승</strong>에 어느 정도 대응하고<br>
+                    3. <strong>예기치 못한 상황에 대한 보장</strong>까지 챙기는 구조입니다.
+                </div>
+                
+                <div class="highlight-box">
+                    <strong>달러보험의 5가지 장점</strong><br><br>
+                    • <strong>달러는 세계 기축통화</strong> - 어떤 상황에서도 가치가 보존됩니다.<br>
+                    • <strong>미국 금리 5.0%</strong> - 한국 금리 3.25%보다 1.5%p 더 높아서 더 많은 수익을 얻을 수 있습니다.<br>
+                    • <strong>보험료 대비 높은 보장</strong> - 납입한 보험료보다 더 많은 보험금을 받을 수 있습니다.<br>
+                    • <strong>달러 코스트 에버리지</strong> - 긴 기간 동안 납입하면 평균 매입 환율을 낮출 수 있어서 더 유리합니다.<br>
+                    • <strong>1달러당 2원</strong> - 시중은행 대비 1/10 수준의 저렴한 환전 수수료입니다.
+                </div>
+                
+                <div class="section-content">
+                    '복잡한 금융상품'이라기보다<br>
+                    <strong>"달러로 장기 저축 + 기본 보장"</strong>이라고 이해하시면 더 가깝습니다.
+                </div>
+            </div>
+            
+            <!-- 섹션 4: 이런 분이라면 -->
+            <div class="section">
+                <h2 class="section-title">달러보험, 누구에게 특히 의미가 있을까요?</h2>
+                
+                <div class="target-section">
+                    <h3>이런 분이라면 한 번쯤 같이 계산해보면 좋습니다</h3>
+                    
+                    <div class="target-item">
+                        <h4>30~40대 직장인</h4>
+                        <p>아이 교육비, 노후, 집값까지…<br>
+                        지금은 버티지만 10년 후를 생각하면 막막하신가요?<br>
+                        원화만이 아니라 달러 자산도 차곡차곡 쌓아두면,<br>
+                        10년 뒤 고민의 폭이 달라질 수 있습니다.</p>
+                    </div>
+                    
+                    <div class="target-item">
+                        <h4>소득 변동이 있는 자영업자 / 프리랜서</h4>
+                        <p>매달 소득이 들쭉날쭉해 안정적인 저축이 어려우신가요?<br>
+                        일정 금액만 달러로 장기 적립해 두면,<br>
+                        '장사 안 되는 달'에도 든든한 한 줄이 생깁니다.</p>
+                    </div>
+                    
+                    <div class="target-item">
+                        <h4>부모님 세대까지 챙기고 싶은 분</h4>
+                        <p>부모님 의료비·생활비가 점점 부담되는데<br>
+                        막상 이야기 꺼내기는 조심스럽나요?<br>
+                        부모님 명의로, 혹은 자녀 명의로<br>
+                        달러 기반 자산을 하나라도 준비해 두면<br>
+                        나중에 가족 회의에서 선택지가 늘어납니다.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 섹션 5: 10년 후 시나리오 -->
+            <div class="section">
+                <h2 class="section-title">지금 1달러, 10년 뒤에는 어떤 의미일까요?</h2>
+                
+                <div class="section-content">
+                    여기서 약속드릴 수 있는 건<br>
+                    "몇 % 수익" 같은 화려한 수치는 아닙니다.<br>
+                    대신, 실제 보험 구조를 바탕으로 구체적인 숫자를 보여드립니다.
+                </div>
+                
+                <div class="stat-box">
+                    <div class="stat-item">
+                        <div class="label">납입보험료</div>
+                        <div class="number" style="font-size: 2.5em;">$13,129</div>
+                        <div class="label">7년간</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">10년 후</div>
+                        <div class="number" style="font-size: 2.5em;">124.75%</div>
+                        <div class="label">해약환급금</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="label">20년 후</div>
+                        <div class="number" style="font-size: 2.5em;">134.86%</div>
+                        <div class="label">해약환급금</div>
+                    </div>
+                </div>
+                
+                <div class="section-content" style="text-align: center; color: #ffc107; font-weight: 600; margin-top: 20px;">
+                    (40세 남자, 7년납, 10만달러 기준)
+                </div>
+                
+                <div class="calculation-box">
+                    <h4>📊 계산 근거</h4>
+                    <div class="formula">
+                        <strong>10년 후 해약환급금 계산:</strong><br>
+                        납입보험료 $13,129 × 124.75% = <span class="result">$16,379</span><br>
+                        ($16,379 ÷ $13,129) × 100 = <span class="result">124.75%</span><br><br>
+                        <strong>20년 후 해약환급금 계산:</strong><br>
+                        납입보험료 $13,129 × 134.86% = <span class="result">$17,706</span><br>
+                        ($17,706 ÷ $13,129) × 100 = <span class="result">134.86%</span><br><br>
+                        <strong>수익률:</strong><br>
+                        10년 후: (124.75% - 100%) ÷ 7년 = <span class="result">연평균 약 3.54%</span><br>
+                        20년 후: (134.86% - 100%) ÷ 7년 = <span class="result">연평균 약 4.98%</span>
+                    </div>
+                </div>
+                
+                <div class="highlight-box">
+                    엑셀을 켜서 혼자 계산하기보다,<br>
+                    <strong>전문가와 나란히 앉아 시뮬레이션을 돌려보는 느낌</strong>에 가깝습니다.<br>
+                    위 숫자는 실제 보험 구조를 바탕으로 한 계산입니다.
+                </div>
+            </div>
+            
+            <!-- 섹션 6: 신대식이 드리는 약속 -->
+            <div class="section">
+                <h2 class="section-title">설명은 길게, 결정은 천천히 하셔도 됩니다</h2>
+                
+                <div class="promise-section">
+                    <h3>신대식이 드리는 약속</h3>
+                    
+                    <div class="promise-item">
+                        <h4>가입 압박 없이</h4>
+                        <p>오늘은 이해만 하고 가셔도 됩니다.</p>
+                    </div>
+                    
+                    <div class="promise-item">
+                        <h4>당신 상황에 맞는 설계</h4>
+                        <p>나이, 소득, 가족 구성, 향후 계획을 듣고<br>
+                        <em>"안 하셔도 되는 경우"</em>라면 그 이유까지 설명드립니다.</p>
+                    </div>
+                    
+                    <div class="promise-item">
+                        <h4>쉽게, 반복해서 설명</h4>
+                        <p>한 번에 이해되지 않으셔도 괜찮습니다.<br>
+                        다시, 더 쉽게 풀어 설명드리겠습니다.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 섹션 7: 어떻게 시작하면 될까요 -->
+            <div class="section">
+                <h2 class="section-title">먼저, 가볍게 이야기를 나눠보세요</h2>
+                
+                <div class="section-content">
+                    아래 방법 중 편하신 방식을 선택해 주세요.
+                </div>
+                
+                <div class="info-box">
+                    <strong>1:1 카톡 / 문자 상담</strong><br>
+                    링크 클릭 후, '달러보험 상담'이라고만 남겨 주세요.<br>
+                    인사부터 차근차근 시작하겠습니다.
+                </div>
+                
+                <div class="info-box">
+                    <strong>ZOOM / 전화 상담 예약</strong><br>
+                    시간 맞추기 어려우시면,<br>
+                    퇴근 후·주말 상담도 조율 가능합니다.
+                </div>
+            </div>
+            
+            <!-- 섹션 6-1: 달러보험의 차별점 -->
+            <div class="section">
+                <h2 class="section-title">달러보험, 왜 선택해야 할까요?</h2>
+                
+                <div class="metlife-section">
+                    <h3>달러보험의 차별점</h3>
+                    
+                    <p style="font-size: 1.5em; font-weight: 700; margin-top: 30px;">
+                        전문 자산 운용사 총 자산 규모
+                    </p>
+                    <span class="big-number">5,876억 달러</span>
+                    <p>한국 외화보유액보다 큰 규모입니다</p>
+                    
+                    <div class="benefit-list" style="background-color: #1a1a1a; margin-top: 30px; padding: 40px; border-radius: 15px; border: 2px solid #444;">
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 25px 0; padding-left: 50px; position: relative; font-size: 1.25em; border-bottom: 1px solid #444; line-height: 2.3; color: #e8e8e8; text-align: justify;">
+                                <span style="position: absolute; left: 0; color: #28a745; font-size: 2.5em; font-weight: bold;">✓</span>
+                                <strong>이미 10만명 이상의 고객</strong>이 선택한 검증된 상품입니다
+                            </li>
+                            <li style="padding: 25px 0; padding-left: 50px; position: relative; font-size: 1.25em; border-bottom: 1px solid #444; line-height: 2.3; color: #e8e8e8; text-align: justify;">
+                                <span style="position: absolute; left: 0; color: #28a745; font-size: 2.5em; font-weight: bold;">✓</span>
+                                <strong>국내 최다 달러보험 라인업</strong> - 다양한 상품으로 여러분의 목적에 맞춤
+                            </li>
+                            <li style="padding: 25px 0; padding-left: 50px; position: relative; font-size: 1.25em; border-bottom: 1px solid #444; line-height: 2.3; color: #e8e8e8; text-align: justify;">
+                                <span style="position: absolute; left: 0; color: #28a745; font-size: 2.5em; font-weight: bold;">✓</span>
+                                <strong>1달러당 2원</strong> - 시중은행 대비 1/10 수준의 저렴한 환전 수수료
+                            </li>
+                            <li style="padding: 25px 0; padding-left: 50px; position: relative; font-size: 1.25em; line-height: 2.3; color: #e8e8e8; text-align: justify;">
+                                <span style="position: absolute; left: 0; color: #28a745; font-size: 2.5em; font-weight: bold;">✓</span>
+                                <strong>전문적인 달러 자산 관리</strong> - 글로벌 자산 운용사의 노하우
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <p style="font-size: 1.4em; margin-top: 30px; font-weight: 600; text-align: center; color: #fff9e6;">
+                        달러 금융상품은 많지만, 제대로 투자 관리되는 곳에서 가입하는 것이 중요합니다.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- 섹션 8: FAQ -->
+            <div class="section">
+                <h2 class="section-title">자주 받는 질문</h2>
+                
+                <div class="faq-section">
+                    <div class="faq-item">
+                        <h4>Q1. 지금 환율이 너무 높은데, 달러로 들어가도 괜찮을까요?</h4>
+                        <p>'지금이 꼭 저점'이라고 말하진 않겠습니다.<br>
+                        그래서 <strong>한 번에 큰 금액을 넣기보다, 시간에 나눠서</strong> 달러를 쌓는 방식을 권해드립니다.<br>
+                        환율이 오르든 내리든 평균 단가를 맞춰가는 구조를 같이 설계해 드립니다.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Q2. 기존에 들고 있는 보험과 뭐가 다른가요?</h4>
+                        <p>가장 큰 차이는 <strong>저축/적립 통화가 달러</strong>라는 점입니다.<br>
+                        보장의 뼈대는 기존 보험과 비슷하지만,<br>
+                        적립되는 자산이 달러로 쌓인다는 점에서<br>
+                        장기적인 구매력 방어에 차이가 생깁니다.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h4>Q3. 수수료나 사업비가 걱정됩니다.</h4>
+                        <p>수수료·사업비는 숨기지 않고,<br>
+                        "같은 돈을 다른 금융상품에 넣었을 때와 비교"해서 설명드립니다.<br>
+                        비교 후에 굳이 선택하지 않으셔도 괜찮습니다.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 최종 CTA -->
+            <div class="cta-section">
+                <h2>가볍게 상담부터 받아보기</h2>
+                
+                <p>
+                    당장 가입이 부담되신다면,<br>
+                    '설명만 듣고 싶어요'라고 남겨 주세요.<br><br>
+                    
+                    가입 권유보다 '설명'이 먼저입니다.<br>
+                    편하게 물어보세요.
+                </p>
+                
+                <button class="consult-btn" onclick="window.location.href='tel:010-2088-5383'">카톡으로 편하게 문의하기</button>
+                <p class="btn-subtitle">또는 010-2088-5383으로 전화 주세요</p>
+            </div>
+        </div>
+        
+        <!-- 푸터 -->
+        <div class="footer">
+            <p style="font-weight: 600; margin-bottom: 20px; color: #e8e8e8; font-size: 1.2em;">본 자료는 달러보험 가입 제안서입니다.</p>
+            <p style="margin-bottom: 30px; color: #b0b0b0;">상품에 대한 자세한 내용은 상품 설명서 및 약관을 참고하시기 바랍니다.</p>
+        </div>
+    </div>
+</body>
+</html>
+
